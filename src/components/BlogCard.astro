@@ -1,0 +1,30 @@
+---
+import { Icon } from 'astro-icon';
+import { CollectionEntry } from 'astro:content';
+const { slug, data: post } = Astro.props as CollectionEntry<'blog'>;
+
+const formatDate = (d: Date) => {
+  // return date as 16 Mar 2021
+  return new Date(d).toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  });
+};
+---
+
+<li class='bg-brand-bg-dark p-3 rounded-xl col-span-2 sm:col-span-1'>
+  <h2 class='text-2xl font-semibold w-full hover:text-brand-accent-cyan'>
+    <a class='flex items-center justify-between' href={`/blog/${slug}`}>
+      {post.title}
+      <Icon name='bi:caret-right' size={20} />
+    </a>
+  </h2>
+  {
+    post.date && (
+      <date>
+        <a href={`/blog/${slug}`}>{formatDate(post.date)}</a>
+      </date>
+    )
+  }
+</li>

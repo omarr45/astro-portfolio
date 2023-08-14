@@ -1,0 +1,23 @@
+---
+import BlogCard from '../../components/BlogCard.astro';
+import MainLayout from '../../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+const blogPosts = await getCollection('blog', ({ data }) => {
+  return !data.draft && data.date < new Date();
+});
+blogPosts.sort((a, b) => {
+  return (new Date(b.data.date) as any) - (new Date(a.data.date) as any);
+});
+---
+
+<MainLayout title='Omar45'>
+  <section class='w-full'>
+    <h2 class='text-3xl sm:text-4xl md:text-5xl font-semibold md:mb-5'>
+      All Blog Posts
+    </h2>
+
+    <ul class='mt-4 grid grid-cols-2 gap-2'>
+      {blogPosts.map((post) => <BlogCard data={post.data} slug={post.slug} />)}
+    </ul>
+  </section>
+</MainLayout>

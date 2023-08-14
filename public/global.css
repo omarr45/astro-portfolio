@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=Zilla+Slab:wght@300;400;500;600;700&display=swap');
+
+/* :root {
+    color-scheme: light dark;
+  } */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Zilla Slab', 'IBM Plex Sans Arabic', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.squiggle {
+  position: relative;
+}
+
+.squiggle::before {
+  content: "";
+  position: absolute;
+  inset:0;
+  translate: 0 70%;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.squiggle-pink::before {
+  background-image: url(./squiggle-pink.svg);
+}
+
+.squiggle-blue::before {
+  background-image: url(./squiggle-blue.svg);
+}
+
+.squiggle-green::before {
+  background-image: url(./squiggle-green.svg);
+}
