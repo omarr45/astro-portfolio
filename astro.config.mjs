@@ -7,16 +7,16 @@ export default defineConfig({
   experimental: {
     viewTransitions: true,
   },
-  integrations: [mdx(), tailwind(),],
+  integrations: [mdx(), tailwind()],
   markdown: {
     shikiConfig: {
       theme: 'dracula',
-      wrap: true
-    }
+      wrap: true,
+    },
   },
   vite: {
     ssr: {
-      external: ['svgo']
-    }
-  }
+      external: ['svgo'],
+    },
+  },
 });
