@@ -19,4 +19,5 @@ export default defineConfig({
       external: ['svgo'],
     },
   },
+  site: 'https://omar45.vercel.app',
 });
