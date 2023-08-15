@@ -16,5 +16,10 @@ export default defineConfig({
       wrap: true,
     },
   },
+  vite: {
+    ssr: {
+      external: ['svgo'],
+    },
+  },
   site: 'https://omar45.vercel.app',
 });
