@@ -6,6 +6,7 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   experimental: {
     viewTransitions: true,
+    assets: true,
   },
   integrations: [mdx(), tailwind()],
   markdown: {
