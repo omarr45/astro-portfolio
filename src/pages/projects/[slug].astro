@@ -1,0 +1,100 @@
+---
+import { Icon } from 'astro-icon';
+import MainLayout from '../../layouts/MainLayout.astro';
+import { getCollection, CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project: project },
+  }));
+}
+
+type Props = {
+  project: CollectionEntry<'projects'>;
+};
+
+const colors = [
+  'brand-accent-cyan',
+  'brand-accent-green',
+  'brand-accent-orange',
+  'brand-accent-pink',
+  'brand-accent-purple',
+  'brand-accent-red',
+  'brand-accent-yellow',
+];
+
+const { project: project } = Astro.props;
+const { Content } = await project.render();
+---
+
+<MainLayout title={`${project.data.title} | Omar45`}>
+  <article
+    class='m-auto w-full max-w-4xl bg-brand-bg-dark p-6 sm:p-10 rounded-2xl my-2 text-center sm:text-left'
+  >
+    <div class='flex flex-row gap-2 items-center justify-center'>
+      <h1 class='text-4xl md:text-5xl font-bold'>
+        {project.data.title}
+      </h1>
+      {
+        true && (
+          <a
+            title='Github Link'
+            target='_blank'
+            href={project.data.links?.github}
+            class='ml-auto bg-brand-accent-pink text-brand-bg-dark rounded-full p-1 sm:p-1.5'>
+            <Icon name='simple-icons:github' size={26} />
+          </a>
+        )
+      }
+      {
+        project.data.links?.live && (
+          <a
+            title='Live Link'
+            target='_blank'
+            href={project.data.links?.live}
+            class='bg-brand-accent-green text-brand-bg-dark rounded-full p-1 sm:p-1.5'>
+            <Icon name='mdi:launch' size={26} />
+          </a>
+        )
+      }
+    </div>
+
+    <hr class='opacity-20 my-4' />
+    <div
+      class='flex flex-wrap items-center justify-center gap-2 sm:justify-start'
+    >
+      {
+        project.data.technologies.map((technology, idx) => (
+          <span
+            class={`bg-${
+              colors[idx % colors.length]
+            } inline-block text-brand-bg-dark px-2 py-1 rounded-lg text-sm font-semibold`}>
+            {technology}
+          </span>
+        ))
+      }
+    </div>
+    <section
+      class='max-w-4xl prose md:prose-xl prose-ul:list-none prose-ul:p-0 sm:prose-ul:list-disc sm:prose-ul:pl-6 prose-a:text-brand-accent-purple sm:prose-img:w-[75%] hover:sm:prose-img:w-full sm:prose-img:transition-all sm:prose-img:duration-1000 sm:prose-img:mx-auto prose-invert'
+    >
+      <Content />
+    </section>
+    <div
+      class='hidden bg-brand-accent-cyan bg-brand-accent-green bg-brand-accent-orange bg-brand-accent-pink bg-brand-accent-purple bg-brand-accent-red bg-brand-accent-yellow'
+    >
+    </div>
+  </article>
+</MainLayout>
+
+<script>
+  // get all svgs inside article
+  const svgs = document.querySelectorAll('article svg');
+  // set their width to 20 on small screens and 30 on larger screens
+  svgs.forEach((svg) => {
+    svg.setAttribute('width', window.innerWidth > 768 ? '30' : '20');
+    svg.setAttribute('height', window.innerWidth > 768 ? '30' : '20');
+  });
+</script>

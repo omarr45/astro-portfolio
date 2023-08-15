@@ -4,6 +4,10 @@
     color-scheme: light dark;
   } */
 
+html {
+  scrollbar-gutter: stable;
+}
+
 *,
 *::before,
 *::after {
@@ -39,10 +43,11 @@ select {
 }
 
 .squiggle::before {
-  content: "";
+  content: '';
   position: absolute;
-  inset:0;
+  inset: 0;
   translate: 0 70%;
+  background-position: center;
   background-repeat: no-repeat;
   z-index: -1;
 }
@@ -57,4 +62,21 @@ select {
 
 .squiggle-green::before {
   background-image: url(./squiggle-green.svg);
+}
+
+.image-slider {
+  margin: 0 auto;
+  max-width: clamp(10rem, 75vw, 100rem);
+  width: 100%;
+  padding: clamp(0rem, 3vw, 1.5rem);
+}
+
+.image-slider img {
+  max-width: 90vw;
+  margin: 0 auto;
+}
+
+.slick-dots li button:before,
+.slick-dots li.slick-active button:before {
+  color: white !important;
 }

@@ -11,11 +11,18 @@ const blogPosts = await getCollection('blog', ({ data }) => {
 blogPosts.sort((a, b) => {
   return (new Date(b.data.date) as any) - (new Date(a.data.date) as any);
 });
+
+const projects = await getCollection('projects', ({ data }) => {
+  return !data.draft && data.featured;
+});
+projects.sort((a, b) => {
+  return b.data.title.localeCompare(a.data.title);
+});
 ---
 
 <MainLayout title='Omar45'>
   <section
-    class='text-center p-4 flex flex-col items-center gap-4 min-h-[calc(100vh-6rem)] justify-center'
+    class='text-center p-4 flex flex-col items-center gap-4 min-h-[calc(100vh-12rem)] sm:min-h-[calc(100vh-6rem)] justify-center'
   >
     <Icon
       class='mb-6 text-brand-accent-cyan'
@@ -41,29 +48,27 @@ blogPosts.sort((a, b) => {
     <h2 class='text-3xl sm:text-4xl md:text-6xl font-semibold md:mb-5'>
       Featured <span class='squiggle squiggle-pink'>Projects</span>
     </h2>
-    <div class='space-y-5 w-full'>
-      <ProjectCard
-        image='https://res.cloudinary.com/omar45/image/upload/v1686344119/projects/stiqa_dkpemt.jpg'
-        title='Stiqa Store'
-        description='An e-commerce website for a small business specializing in selling stickers.'
-        categories={['ReactJS', 'TailwindCSS', 'E-commerce']}
-        link='https://StiqaStore.com/'
-      />
-      <ProjectCard
-        image='https://res.cloudinary.com/omar45/image/upload/v1627763717/projects/fcis.png'
-        title='FCIS 2023'
-        description='A content management system that helps computer science students access all the important university materials. With over 50,000 views per month.'
-        categories={['ReactJS', 'Firebase', 'Admin Dashboard']}
-        link='https://7th.fcis2023.me/'
-      />
-      <ProjectCard
-        image='https://res.cloudinary.com/omar45/image/upload/v1686344119/projects/certi_misrlp.jpg'
-        title='Certi'
-        description='Offers a straightforward solution for issuing NFT certificates, with customizable templates and a simple editor that requires no technical expertise.'
-        categories={['ReactJS', 'Canvas API', 'NFT']}
-        link='https://certi.to/'
-      />
-    </div>
+    <ul class='space-y-3 w-full'>
+      {
+        projects.map((project) => (
+          <ProjectCard
+            image={project.data.image}
+            title={project.data.title}
+            description={project.data.description}
+            categories={project.data.technologies}
+            slug={project.slug}
+          />
+        ))
+      }
+      <li class='bg-brand-bg-dark p-3 rounded-xl col-span-2 sm:col-span-1'>
+        <h2 class='text-2xl font-semibold w-full'>
+          <a class='flex items-center justify-between' href='/projects'>
+            All Projects
+            <Icon name='bi:caret-right' size={20} />
+          </a>
+        </h2>
+      </li>
+    </ul>
   </section>
   <section
     class='w-full text-center p-4 flex flex-col items-center gap-4 justify-center'
@@ -71,7 +76,7 @@ blogPosts.sort((a, b) => {
     <h2 class='text-3xl sm:text-4xl md:text-6xl font-semibold mt-10 md:mb-5'>
       Latest <span class='squiggle squiggle-green'>Blog Posts</span>
     </h2>
-    <ul class='w-full grid grid-cols-2 gap-2 text-left'>
+    <ul class='w-full grid grid-cols-2 gap-3 text-left'>
       {
         blogPosts
           .slice(0, 3)

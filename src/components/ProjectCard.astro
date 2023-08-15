@@ -1,27 +1,33 @@
 ---
+import { Image } from 'astro:assets';
+
 type ProjectCardProps = {
   image: string;
   title: string;
   description: string;
   categories: string[];
-  link: string;
+  slug: string;
 };
+
 const {
   image = 'https://placehold.co/600x400?text=Project',
   title = 'Project 1',
   description = 'Lorem ipsum dolor sit amet, ',
   categories = ['ReactJS', 'Firebase', 'TailwindCSS'],
-  link = 'https://github.com/omarr45/',
+  slug = 'project-1',
 } = Astro.props as ProjectCardProps;
 ---
 
-<section
-  class='w-full text-sm bg-brand-bg-dark p-3 rounded-xl space-y-2 sm:flex sm:gap-4 sm:text-base sm:space-y-0 hover:scale-[1.02] transition-transform duration-300'
+<li
+  class='w-full text-base bg-brand-bg-dark p-3 rounded-xl space-y-2 sm:flex sm:gap-4 sm:text-base sm:space-y-0 hover:scale-[1.02] transition-transform duration-300'
 >
-  <img
+  <Image
+    quality={100}
     src={image}
-    class='rounded-lg w-full sm:w-auto sm:max-h-48 h-full aspect-[3/2] object-cover'
     alt={title}
+    width={600}
+    height={400}
+    class='rounded-lg w-full sm:w-auto sm:max-h-48 h-full aspect-[3/2] object-cover'
   />
   <div
     class='space-y-2 sm:space-y-0 sm:w-full sm:text-left sm:flex sm:flex-col sm:justify-start sm:gap-3'
@@ -32,26 +38,26 @@ const {
       {title}
       <a
         class='hidden border-2 border-brand-accent-green bg-transparent w-fit py-1.5 px-3 font-normal tracking-wide text-brand-bg-te hover:text-brand-bg-dark duration-300 hover:bg-brand-accent-green rounded-md text-lg cursor-pointer sm:inline-block'
-        href={link}
-        target='_blank'>View Project</a
+        href={`/projects/${slug}`}>View Project</a
       >
     </h3>
     <div
       class='flex gap-2 flex-wrap items-center justify-center sm:justify-start'
     >
       {
-        categories?.map((category) => (
-          <span class='inline-block bg-brand-accent-purple px-2.5 text-brand-bg py-1 rounded-full text-xs font-medium sm:text-base'>
-            {category}
-          </span>
-        ))
+        categories
+          .slice(0, 3)
+          ?.map((category) => (
+            <span class='inline-block bg-brand-accent-purple text-brand-bg-dark px-2 py-1 rounded-lg text-sm font-semibold'>
+              {category}
+            </span>
+          ))
       }
     </div>
     <p class='md:text-lg md:text-justify'>{description}</p>
     <a
       class='block w-fit mx-auto py-2 px-4 font-semibold tracking-wide hover:tracking-widest transition-[letter-spacing] hover:bg-brand-accent-green-hover duration-300 bg-brand-accent-green rounded-md text-brand-bg text-lg cursor-pointer sm:hidden'
-      href={link}
-      target='_blank'>View Project</a
+      href={`/projects/${slug}`}>View Project</a
     >
   </div>
-</section>
+</li>

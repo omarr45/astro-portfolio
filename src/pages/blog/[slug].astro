@@ -10,7 +10,7 @@ export async function getStaticPaths() {
     props: { post },
   }));
 }
-import { formatDate } from '../../utils';
+import { formatDate } from '../../utils/utils';
 
 type Props = {
   post: CollectionEntry<'blog'>;
@@ -22,7 +22,7 @@ const { Content } = await post.render();
 
 <MainLayout title={`${post.data.title} | Omar45`}>
   <article
-    class='m-auto w-full max-w-4xl bg-brand-bg-dark p-6 sm:p-10 rounded-2xl my-8'
+    class='m-auto w-full max-w-4xl bg-brand-bg-dark p-6 sm:p-10 rounded-2xl my-2'
     dir={post.data.isArabic ? 'rtl' : 'ltr'}
     class=''
   >
