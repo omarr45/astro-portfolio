@@ -39,7 +39,7 @@ const { Content } = await project.render();
         {project.data.title}
       </h1>
       {
-        true && (
+        project.data.links?.github && (
           <a
             title='Github Link'
             target='_blank'
@@ -55,7 +55,9 @@ const { Content } = await project.render();
             title='Live Link'
             target='_blank'
             href={project.data.links?.live}
-            class='bg-brand-accent-green text-brand-bg-dark rounded-full p-1 sm:p-1.5'>
+            class={`${
+              project.data.links.github ? '' : 'ml-auto'
+            } bg-brand-accent-green text-brand-bg-dark rounded-full p-1 sm:p-1.5`}>
             <Icon name='mdi:launch' size={26} />
           </a>
         )

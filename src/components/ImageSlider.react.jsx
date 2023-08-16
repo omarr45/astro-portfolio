@@ -16,7 +16,7 @@ const ImageSlider = ({ imgs }) => {
     autoplay: true,
     autoplaySpeed: 4000,
     arrows: matches ? true : false,
-    pauseOnHover: false,
+    pauseOnHover: true,
   };
 
   return (
