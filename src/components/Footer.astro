@@ -2,10 +2,10 @@
 import { Icon } from 'astro-icon';
 ---
 
-<footer class='p-4 text-center bg-brand-bg-dark'>
+<footer class='p-4 text-center bg-brand-bg-dark space-y-4'>
   <p>Copyright &copy; <span id='year'></span> - Omar AbdulRahman</p>
   <section>
-    <ul class='flex items-center justify-center gap-4 mt-4'>
+    <ul class='flex items-center justify-center gap-4'>
       <li title='LinkedIn'>
         <a
           href='https://www.linkedin.com/in/omar45/'
@@ -78,6 +78,34 @@ import { Icon } from 'astro-icon';
       </li>
     </ul>
   </section>
+  <p class='text-sm'>
+    <span>
+      <a
+        class='hover:text-brand-accent-green'
+        href='http://vercel.com'
+        target='_blank'
+        rel='noopener noreferrer'>Vercel</a
+      >
+    </span>
+     -
+    <span>
+      <a
+        class='hover:text-brand-accent-purple'
+        href='https://astro.build'
+        target='_blank'
+        rel='noopener noreferrer'>Astro</a
+      >
+    </span>
+     -
+    <span>
+      <a
+        class='hover:text-brand-accent-cyan'
+        href='https://tailwindcss.com'
+        target='_blank'
+        rel='noopener noreferrer'>Tailwind CSS</a
+      >
+    </span>
+  </p>
 </footer>
 
 <script>
