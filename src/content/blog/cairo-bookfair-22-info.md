@@ -4,6 +4,7 @@ date: 2022-01-22
 draft: false
 author: 'Omar AbdulRahman'
 isArabic: true
+categories: ['Travel', 'Books']
 ---
 
 يا أهلا وسهلًا، أيام قليلة تفصلنا عن الدورة الـ53 لمعرض القاهرة الدولي للكتاب 2022.

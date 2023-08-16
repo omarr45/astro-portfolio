@@ -1,10 +1,10 @@
 ---
 title: 'معرض مكتبة الإسكندرية للكتاب 2023'
-description: 'This is the first blog post.'
 date: 2023-07-20
 draft: false
 author: 'Omar AbdulRahman'
 isArabic: true
+categories: ['Travel', 'Books']
 ---
 
 معرض مكتبة الإسكندرية الدولي للكتاب بدأ دورته الـ18 من يوم 12 يوليو ويستمر حتى 26 يوليو. فاقررت أزبط يوم وأخطف رجلي صد رد ألقي نظرة عليه وقد تقرر أن يكون هذا اليوم هو يوم الثلاثاء 18 يوليو.

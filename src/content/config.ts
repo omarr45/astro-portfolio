@@ -6,6 +6,7 @@ const blog = defineCollection({
     date: z.date(),
     draft: z.boolean(),
     author: z.enum(['Omar AbdulRahman', 'Shehab Ihab', 'Ahmed Tawfik']),
+    categories: z.array(z.enum(['Development', 'Books', 'Religion', 'Travel', 'Recommendations'])),
     isArabic: z.boolean().optional(),
   }),
 });

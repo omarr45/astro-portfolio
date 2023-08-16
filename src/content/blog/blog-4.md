@@ -3,6 +3,7 @@ title: 'Markdown Boilerplate test'
 date: 2023-08-06
 draft: true
 author: 'Omar AbdulRahman'
+categories: ['Travel', 'Books']
 ---
 
 # An h1 header

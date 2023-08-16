@@ -13,6 +13,17 @@ const { slug, data: post } = Astro.props as CollectionEntry<'blog'>;
     </a>
   </h2>
   {
+    post.categories && (
+      <div class='my-2 flex flex-wrap gap-2'>
+        {post.categories.sort().map((category) => (
+          <span class='inline-block bg-brand-accent-cyan text-brand-bg-dark px-2 py-1 rounded-lg text-sm font-semibold'>
+            {category}
+          </span>
+        ))}
+      </div>
+    )
+  }
+  {
     post.date && (
       <date>
         <a href={`/blog/${slug}`}>{formatDate(post.date)}</a>
