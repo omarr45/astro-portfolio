@@ -1,12 +1,12 @@
 ---
-title: 'Tailwind conditional rendering'
+title: 'Tailwind dynamic classes'
 date: 2023-08-15
 draft: false
 author: 'Omar AbdulRahman'
 categories: ['Development']
 ---
 
-While developing this website, I came across a problem where I wanted to change the tag color sequentially based on an array of colors.
+While developing this website, I came across a problem where I wanted to change the tag color dynamically based on an array of colors.
 
 ```js
 const colors = ['red-500', 'blue-500', 'green-500', 'yellow-500', 'pink-500'];
@@ -42,7 +42,7 @@ module.exports = {
 
 ### 2. Faster Hack:
 
-Another way to fix this is to add a dummy element to your html, and add the classes to it. This way, TailwindCSS will not remove the classes. Just don't forget to **hide** the element.
+Another way to fix this is to add a dummy element to your html, and add the classes to it. This way, TailwindCSS will not remove the classes. Just don't forget to **hide** the element. You can also write it anywhere in your source code, but I don't prefer this way.
 
 ```html
 <div
@@ -50,6 +50,10 @@ Another way to fix this is to add a dummy element to your html, and add the clas
 ></div>
 ```
 
-At the end, I went with the second option because it's faster and easier to implement. But, if you have a lot of classes, then you should go with the first option.
+At the end, I went with the second option, as tailwindCSS advises against using the `safelist` whenever possible, stating it as a last-resort.
 
 ![TailwindCSS classes working](../../assets/solved.png)
+
+#### References
+
+[Tailwind Content Configuration](https://tailwindcss.com/docs/content-configuration)
