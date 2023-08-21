@@ -2,12 +2,211 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 ---
 
-<MainLayout title='Omar45'>
-  <section class='w-full'>
-    <h2
-      class='text-3xl sm:text-4xl md:text-5xl text-center font-semibold md:mb-5'
-    >
-      CV coming soon
-    </h2>
+<MainLayout title='CV | Omar45'>
+  <section class='w-full px-2'>
+    <section class='flex items-center justify-between md:mb-5'>
+      <h2 class='text-3xl sm:text-4xl md:text-5xl font-semibold'>My CV</h2>
+      <button
+        onclick="
+        window.open('/Omar AbdulRahman CV.pdf', '_blank')
+        "
+        class='bg-brand-accent-purple hover:bg-brand-accent-purple-hover text-brand-bg font-bold py-2 px-4 rounded'
+        >Download PDF</button
+      >
+    </section>
+
+    <hr class='my-3 md:my-5 opacity-30' />
+
+    <h2 class='text-3xl font-bold mb-2'>Work Experience</h2>
+    <ul>
+      <li>
+        <h3 class='text-xl font-bold'>Frontend Developer</h3>
+        <p class='text-lg'>
+          <a href='https://github.com/neararabic'>NEAR in Arabic</a>
+        </p>
+        <p class='sm:text-lg italic opacity-60'>AUG 2022 - JAN 2023</p>
+        <p class='text-lg text-justify'>
+          Developed and deployed several projects during a 3-month internship at
+          NEAR, resulting in recognition as the best member of a team of 6.
+          Continued as a part-time employee for another 3 months, developing 5
+          websites related to blockchains, smart contracts, NFTs, and database
+          dashboards.
+        </p>
+      </li>
+    </ul>
+
+    <h2 class='text-3xl font-bold mb-2 mt-8'>Volunteering</h2>
+    <ul>
+      <li>
+        <h3 class='text-xl font-bold'>Organizer / Photographer</h3>
+        <p class='text-lg'>
+          <a href='https://www.facebook.com/profile.php?id=100093578463906'
+            >React Cairo #3</a
+          >
+        </p>
+        <p class='sm:text-lg italic opacity-60'>AUG 2023</p>
+        <p class='text-lg text-justify'>
+          I was responsible for media coverage of the event, as well as
+          organizing the event itself.
+        </p>
+      </li>
+      <li>
+        <h3 class='text-xl font-bold'>Head of Media Committee</h3>
+        <p class='text-lg'>
+          <a href='https://www.facebook.com/Humans.FCIS'>Humans of FCIS</a>
+        </p>
+        <p class='sm:text-lg italic opacity-60'>AUG 2020 - JAN 2023</p>
+        <p class='text-lg text-justify'>
+          I did a comprehensive rebranding of the entire student activity's
+          identity, while also being responsible for the social media presence
+          of the association and photography coverage of events.
+        </p>
+      </li>
+      <li>
+        <h3 class='text-xl font-bold'>Head of Media Committee</h3>
+        <p class='text-lg'>
+          <a href='https://www.facebook.com/acmASCIS/'>acmASCIS</a>
+        </p>
+        <p class='sm:text-lg italic opacity-60'>AUG 2020 - AUG 2022</p>
+        <p class='text-lg text-justify'>
+          I took charge of creating social media designs, organizing digital
+          campaigns, designing printables, and coordinating photography
+          coverage.
+        </p>
+      </li>
+      <li>
+        <h3 class='text-xl font-bold'>Head of Media Committee</h3>
+        <p class='text-lg'>
+          <a href='https://www.facebook.com/media/set/?set=a.1726979610860278'
+            >Baladna Initiative</a
+          >
+        </p>
+        <p class='sm:text-lg italic opacity-60'>JAN 2015 - JAN 2018</p>
+        <p class='text-lg text-justify'>
+          I assumed a leadership role, guiding a team of 20 skilled calligraphy
+          artists during the Cairo International Book Fair, where we wrote the
+          visitors' names, adding a personalized touch to the event.
+        </p>
+      </li>
+    </ul>
+
+    <h2 class='text-3xl font-bold mb-2 mt-8'>Education</h2>
+    <ul>
+      <li>
+        <h3 class='text-xl font-bold'>BSc. Computer Science</h3>
+        <p class='text-lg'>Ain Shams University</p>
+        <p class='text-lg italic opacity-60'>AUG 2019 - JUL 2023</p>
+      </li>
+    </ul>
+
+    <h2 class='text-3xl font-bold mb-2 mt-8'>Skills</h2>
+    <ul class='columns-2 md:columns-3 list-disc md:text-lg'>
+      <li>
+        <p>HTML, CSS, Sass</p>
+      </li>
+      <li>
+        <p>JS, ES6</p>
+      </li>
+      <li>
+        <p>Responsive Design</p>
+      </li>
+      <li>
+        <p>React JS</p>
+      </li>
+      <li>
+        <p>Astro</p>
+      </li>
+      <li>
+        <p>TailwindCSS</p>
+      </li>
+      <li>
+        <p>Firebase</p>
+      </li>
+      <li>
+        <p>JSON, APIs</p>
+      </li>
+      <li>
+        <p>GitHub</p>
+      </li>
+      <li>
+        <p>Adobe Illustrator</p>
+      </li>
+      <li>
+        <p>Adobe XD</p>
+      </li>
+      <li>
+        <p>C++, Python</p>
+      </li>
+    </ul>
   </section>
 </MainLayout>
+
+<style lang='scss'>
+  ul {
+    &:where(.columns-2) {
+      li {
+        list-style: none;
+        margin-left: 1rem;
+        position: relative;
+
+        &:before {
+          position: absolute;
+          content: '\2022';
+          color: #ff79c6;
+          width: 1em;
+          margin-left: -0.75em;
+
+          @media (min-width: 768px) {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+    &:not(.columns-2) {
+      li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-left: 0.5rem;
+        padding-top: 0.5rem;
+        padding-bottom: 1rem;
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0.875rem;
+          left: -0.5rem;
+          width: 1rem;
+          height: 1rem;
+          background-color: #ff79c6;
+          border-radius: 50%;
+        }
+
+        &:not(:last-child)::after {
+          content: '';
+          position: absolute;
+          top: 1.25rem;
+          left: -1.5px;
+          width: 3px;
+          height: 100%;
+          background-color: #ff79c6;
+        }
+      }
+    }
+  }
+  a[href^='http'] {
+    position: relative;
+    display: inline-block;
+    padding-right: 1.25rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &::after {
+      content: url('./arrow.svg');
+      position: absolute;
+      top: 0.25rem;
+      right: 0;
+      width: 1rem;
+    }
+  }
+</style>

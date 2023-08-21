@@ -2,11 +2,11 @@
 import Footer from '../components/Footer.astro';
 import Navbar from '../components/Navbar.astro';
 import MainHead from './MainHead.astro';
-const { title = 'Demo Website' } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <html lang='en'>
-  <MainHead {title} />
+  <MainHead {title} {description} />
   <body class='bg-brand-bg text-brand-text grid grid-rows-[auto_1fr_auto]'>
     <Navbar />
     <main class='grid place-items-center w-full max-w-4xl mx-auto p-4'>
