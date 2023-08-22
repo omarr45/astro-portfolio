@@ -17,13 +17,13 @@ type Props = {
 };
 
 const colors = [
-  "brand-accent-cyan",
-  "brand-accent-green",
-  "brand-accent-orange",
-  "brand-accent-pink",
-  "brand-accent-purple",
-  "brand-accent-red",
-  "brand-accent-yellow",
+  "bg-brand-accent-cyan",
+  "bg-brand-accent-green",
+  "bg-brand-accent-orange",
+  "bg-brand-accent-pink",
+  "bg-brand-accent-purple",
+  "bg-brand-accent-red",
+  "bg-brand-accent-yellow",
 ];
 
 const { project: project } = Astro.props;
@@ -73,7 +73,7 @@ const { Content } = await project.render();
       {
         project.data.technologies.map((technology, idx) => (
           <span
-            class={`bg-${
+            class={`${
               colors[idx % colors.length]
             } inline-block rounded-lg px-2 py-1 text-sm font-semibold text-brand-bg-dark`}
           >
@@ -87,10 +87,6 @@ const { Content } = await project.render();
     >
       <Content />
     </section>
-    <div
-      class="hidden bg-brand-accent-cyan bg-brand-accent-green bg-brand-accent-orange bg-brand-accent-pink bg-brand-accent-purple bg-brand-accent-red bg-brand-accent-yellow"
-    >
-    </div>
   </article>
 </MainLayout>
 
