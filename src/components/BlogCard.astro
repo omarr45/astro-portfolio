@@ -1,24 +1,25 @@
 ---
-import { Icon } from 'astro-icon';
-import { CollectionEntry } from 'astro:content';
-import { formatDate } from '../utils/utils';
-const { slug, data: post } = Astro.props as CollectionEntry<'blog'>;
+import { Icon } from "astro-icon";
+import { CollectionEntry } from "astro:content";
+import { formatDate } from "../utils/utils";
+const { slug, data: post } = Astro.props as CollectionEntry<"blog">;
 ---
 
-<li class='bg-brand-bg-dark p-3 rounded-xl col-span-2 sm:col-span-1'>
-  <h2 class='text-2xl font-semibold w-full hover:text-brand-accent-cyan'>
-    <a class='flex items-center justify-between' href={`/blog/${slug}`}>
+<li class="col-span-2 rounded-xl bg-brand-bg-dark p-3 sm:col-span-1">
+  <h2 class="w-full text-2xl font-semibold hover:text-brand-accent-cyan">
+    <a class="flex items-center justify-between" href={`/blog/${slug}`}>
       {post.title}
-      <Icon name='bi:caret-right' size={20} />
+      <Icon name="bi:caret-right" size={20} />
     </a>
   </h2>
   {
     post.categories && (
       <section
-        class='my-2 flex flex-wrap gap-2'
-        aria-label='Blogpost categories'>
+        class="my-2 flex flex-wrap gap-2"
+        aria-label="Blogpost categories"
+      >
         {post.categories.sort().map((category) => (
-          <span class='inline-block bg-brand-accent-cyan text-brand-bg-dark px-2 py-1 rounded-lg text-sm font-semibold'>
+          <span class="inline-block rounded-lg bg-brand-accent-cyan px-2 py-1 text-sm font-semibold text-brand-bg-dark">
             {category}
           </span>
         ))}
@@ -28,7 +29,7 @@ const { slug, data: post } = Astro.props as CollectionEntry<'blog'>;
   {
     post.date && (
       <date>
-        <a tabindex='-1' href={`/blog/${slug}`}>
+        <a tabindex="-1" href={`/blog/${slug}`}>
           {formatDate(post.date)}
         </a>
       </date>

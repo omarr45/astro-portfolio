@@ -1,29 +1,29 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import { Image } from 'astro:assets';
-import image404 from '../assets/404.svg';
+import MainLayout from "../layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+import image404 from "../assets/404.svg";
 ---
 
-<MainLayout title='404 Not Found | Omar45'>
-  <section class='w-full space-y-6 py-6 text-center'>
-    <Image src={image404} width={550} alt='404 Not Found' class='mx-auto' />
-    <h1 class='sr-only'>404 Page Not Found</h1>
+<MainLayout title="404 Not Found | Omar45">
+  <section class="w-full space-y-6 py-6 text-center">
+    <Image src={image404} width={550} alt="404 Not Found" class="mx-auto" />
+    <h1 class="sr-only">404 Page Not Found</h1>
     <h2
-      class='font-semibold text-xl sm:text-2xl md:text-3xl leading-relaxed md:leading-[1.7] [text-wrap:balance]'
+      class="text-xl font-semibold leading-relaxed [text-wrap:balance] sm:text-2xl md:text-3xl md:leading-[1.7]"
     >
       This webpage is just taking a brief break from being in the spotlight.
       While it recharges,
     </h2>
     <section
-      class='flex gap-4 justify-center items-center text-brand-bg text-lg sm:text-xl leading-tight'
+      class="flex items-center justify-center gap-4 text-lg leading-tight text-brand-bg sm:text-xl"
     >
       <a
-        class='bg-brand-accent-cyan hover:bg-brand-accent-cyan-hover font-bold py-2 px-4 rounded'
-        href='/'>Go Back Home</a
+        class="rounded bg-brand-accent-cyan px-4 py-2 font-bold hover:bg-brand-accent-cyan-hover"
+        href="/">Go Back Home</a
       >
       <a
-        class='bg-brand-accent-orange hover:bg-brand-accent-orange-hover font-bold py-2 px-4 rounded'
-        href='/blog'>Check My Blog</a
+        class="rounded bg-brand-accent-orange px-4 py-2 font-bold hover:bg-brand-accent-orange-hover"
+        href="/blog">Check My Blog</a
       >
     </section>
     <!-- <div class='text-7xl'>

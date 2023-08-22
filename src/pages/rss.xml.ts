@@ -1,17 +1,17 @@
-import { getCollection } from 'astro:content';
-import rss from '@astrojs/rss';
+import { getCollection } from "astro:content";
+import rss from "@astrojs/rss";
 
 export async function get(context) {
-  const blogPosts = await getCollection('blog', ({ data }) => {
+  const blogPosts = await getCollection("blog", ({ data }) => {
     return !data.draft && data.date < new Date();
   });
   blogPosts.sort((a, b) => {
     return (new Date(b.data.date) as any) - (new Date(a.data.date) as any);
   });
   return rss({
-    stylesheet: '/rss/styles.xsl',
+    stylesheet: "/rss/styles.xsl",
     title: "Omar's Blog",
-    description: 'Books, code, and other things I like to write about.',
+    description: "Books, code, and other things I like to write about.",
     site: context.site,
     items: blogPosts.map((post) => ({
       title: post.data.title,

@@ -1,11 +1,11 @@
-import 'slick-carousel/slick/slick-theme.css';
-import 'slick-carousel/slick/slick.css';
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 
-import Slider from 'react-slick';
-import { useMediaQuery } from '../utils/useMediaQuery';
+import Slider from "react-slick";
+import { useMediaQuery } from "../utils/useMediaQuery";
 
 const ImageSlider = ({ imgs }) => {
-  const matches = useMediaQuery('(min-width: 768px)');
+  const matches = useMediaQuery("(min-width: 768px)");
 
   const settings = {
     dots: true,
@@ -20,10 +20,10 @@ const ImageSlider = ({ imgs }) => {
   };
 
   return (
-    <div className='image-slider mt-2'>
+    <div className="image-slider mt-2">
       <Slider {...settings}>
         {imgs?.map((img, i) => (
-          <img key={i} src={img} alt='slider' />
+          <img key={i} src={img} alt="slider" />
         ))}
       </Slider>
     </div>

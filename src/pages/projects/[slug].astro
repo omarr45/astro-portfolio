@@ -1,10 +1,10 @@
 ---
-import { Icon } from 'astro-icon';
-import MainLayout from '../../layouts/MainLayout.astro';
-import { getCollection, CollectionEntry } from 'astro:content';
+import { Icon } from "astro-icon";
+import MainLayout from "../../layouts/MainLayout.astro";
+import { getCollection, CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
-  const projects = await getCollection('projects');
+  const projects = await getCollection("projects");
 
   return projects.map((project) => ({
     params: { slug: project.slug },
@@ -13,17 +13,17 @@ export async function getStaticPaths() {
 }
 
 type Props = {
-  project: CollectionEntry<'projects'>;
+  project: CollectionEntry<"projects">;
 };
 
 const colors = [
-  'brand-accent-cyan',
-  'brand-accent-green',
-  'brand-accent-orange',
-  'brand-accent-pink',
-  'brand-accent-purple',
-  'brand-accent-red',
-  'brand-accent-yellow',
+  "brand-accent-cyan",
+  "brand-accent-green",
+  "brand-accent-orange",
+  "brand-accent-pink",
+  "brand-accent-purple",
+  "brand-accent-red",
+  "brand-accent-yellow",
 ];
 
 const { project: project } = Astro.props;
@@ -32,60 +32,63 @@ const { Content } = await project.render();
 
 <MainLayout title={`${project.data.title} | Omar45`}>
   <article
-    class='m-auto w-full max-w-4xl bg-brand-bg-dark p-6 sm:p-10 rounded-2xl my-2 text-center sm:text-left'
+    class="m-auto my-2 w-full max-w-4xl rounded-2xl bg-brand-bg-dark p-6 text-center sm:p-10 sm:text-left"
   >
-    <div class='flex flex-row gap-2 items-center justify-center'>
-      <h1 class='text-4xl md:text-5xl font-bold'>
+    <div class="flex flex-row items-center justify-center gap-2">
+      <h1 class="text-4xl font-bold md:text-5xl">
         {project.data.title}
       </h1>
       {
         project.data.links?.github && (
           <a
-            title='Github Link'
-            target='_blank'
+            title="Github Link"
+            target="_blank"
             href={project.data.links?.github}
-            class='ml-auto bg-brand-accent-pink text-brand-bg-dark rounded-full p-1 sm:p-1.5 focus:outline-none focus-visible:outline-2 focus-visible:outline-brand-accent-pink focus-visible:outline-offset-4'>
-            <Icon name='simple-icons:github' size={26} />
+            class="ml-auto rounded-full bg-brand-accent-pink p-1 text-brand-bg-dark focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-accent-pink sm:p-1.5"
+          >
+            <Icon name="simple-icons:github" size={26} />
           </a>
         )
       }
       {
         project.data.links?.live && (
           <a
-            title='Live Link'
-            target='_blank'
+            title="Live Link"
+            target="_blank"
             href={project.data.links?.live}
             class={`${
-              project.data.links.github ? '' : 'ml-auto'
-            } bg-brand-accent-green text-brand-bg-dark rounded-full p-1 sm:p-1.5 focus:outline-none focus-visible:outline-2 focus-visible:outline-brand-accent-green focus-visible:outline-offset-4`}>
-            <Icon name='mdi:launch' size={26} />
+              project.data.links.github ? "" : "ml-auto"
+            } rounded-full bg-brand-accent-green p-1 text-brand-bg-dark focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-accent-green sm:p-1.5`}
+          >
+            <Icon name="mdi:launch" size={26} />
           </a>
         )
       }
     </div>
 
-    <hr class='opacity-20 my-4' />
+    <hr class="my-4 opacity-20" />
     <div
-      class='flex flex-wrap items-center justify-center gap-2 sm:justify-start'
+      class="flex flex-wrap items-center justify-center gap-2 sm:justify-start"
     >
       {
         project.data.technologies.map((technology, idx) => (
           <span
             class={`bg-${
               colors[idx % colors.length]
-            } inline-block text-brand-bg-dark px-2 py-1 rounded-lg text-sm font-semibold`}>
+            } inline-block rounded-lg px-2 py-1 text-sm font-semibold text-brand-bg-dark`}
+          >
             {technology}
           </span>
         ))
       }
     </div>
     <section
-      class='max-w-4xl prose md:prose-xl prose-ul:list-none prose-ul:p-0 sm:prose-ul:list-disc sm:prose-ul:pl-6 prose-a:text-brand-accent-purple sm:prose-img:w-[75%] hover:sm:prose-img:w-full sm:prose-img:transition-all sm:prose-img:duration-1000 sm:prose-img:mx-auto prose-invert'
+      class="prose prose-invert max-w-4xl md:prose-xl prose-a:text-brand-accent-purple prose-ul:list-none prose-ul:p-0 sm:prose-ul:list-disc sm:prose-ul:pl-6 sm:prose-img:mx-auto sm:prose-img:w-[75%] sm:prose-img:transition-all sm:prose-img:duration-1000 hover:sm:prose-img:w-full"
     >
       <Content />
     </section>
     <div
-      class='hidden bg-brand-accent-cyan bg-brand-accent-green bg-brand-accent-orange bg-brand-accent-pink bg-brand-accent-purple bg-brand-accent-red bg-brand-accent-yellow'
+      class="hidden bg-brand-accent-cyan bg-brand-accent-green bg-brand-accent-orange bg-brand-accent-pink bg-brand-accent-purple bg-brand-accent-red bg-brand-accent-yellow"
     >
     </div>
   </article>
@@ -93,10 +96,10 @@ const { Content } = await project.render();
 
 <script>
   // get all svgs inside article
-  const svgs = document.querySelectorAll('article svg');
+  const svgs = document.querySelectorAll("article svg");
   // set their width to 20 on small screens and 30 on larger screens
   svgs.forEach((svg) => {
-    svg.setAttribute('width', window.innerWidth > 768 ? '30' : '20');
-    svg.setAttribute('height', window.innerWidth > 768 ? '30' : '20');
+    svg.setAttribute("width", window.innerWidth > 768 ? "30" : "20");
+    svg.setAttribute("height", window.innerWidth > 768 ? "30" : "20");
   });
 </script>

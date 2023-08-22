@@ -1,19 +1,19 @@
 ---
-import MainLayout from '../../layouts/MainLayout.astro';
-import { getCollection, CollectionEntry } from 'astro:content';
+import MainLayout from "../../layouts/MainLayout.astro";
+import { getCollection, CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
-  const blogPosts = await getCollection('blog');
+  const blogPosts = await getCollection("blog");
 
   return blogPosts.map((post) => ({
     params: { slug: post.slug },
     props: { post },
   }));
 }
-import { formatDate } from '../../utils/utils';
+import { formatDate } from "../../utils/utils";
 
 type Props = {
-  post: CollectionEntry<'blog'>;
+  post: CollectionEntry<"blog">;
 };
 
 const { post } = Astro.props;
@@ -22,18 +22,18 @@ const { Content } = await post.render();
 
 <MainLayout title={`${post.data.title} | Omar45`}>
   <article
-    class='m-auto w-full max-w-4xl bg-brand-bg-dark p-6 sm:p-10 rounded-2xl my-2'
-    dir={post.data.isArabic ? 'rtl' : 'ltr'}
+    class="m-auto my-2 w-full max-w-4xl rounded-2xl bg-brand-bg-dark p-6 sm:p-10"
+    dir={post.data.isArabic ? "rtl" : "ltr"}
   >
-    <h1 class='text-3xl sm:text-4xl md:text-5xl font-bold'>
+    <h1 class="text-3xl font-bold sm:text-4xl md:text-5xl">
       {post.data.title}
     </h1>
-    <div class={`flex flex-wrap gap-2 ${post.data.isArabic ? 'mt-6' : 'mt-3'}`}>
+    <div class={`flex flex-wrap gap-2 ${post.data.isArabic ? "mt-6" : "mt-3"}`}>
       {
         post.data.categories
           .sort()
           .map((category) => (
-            <span class='inline-block bg-brand-accent-cyan text-brand-bg-dark px-2 py-1 rounded-lg font-semibold'>
+            <span class="inline-block rounded-lg bg-brand-accent-cyan px-2 py-1 font-semibold text-brand-bg-dark">
               {category}
             </span>
           ))
@@ -42,14 +42,14 @@ const { Content } = await post.render();
     <time
       datetime={post.data.date.toString()}
       class={`block text-sm sm:text-lg md:text-xl ${
-        post.data.isArabic ? 'my-4' : 'mt-2 mb-4'
+        post.data.isArabic ? "my-4" : "mt-2 mb-4"
       }`}
     >
       {formatDate(post.data.date)}
     </time>
-    <hr class='opacity-20 mb-4' />
+    <hr class="mb-4 opacity-20" />
     <section
-      class='max-w-4xl prose md:prose-xl prose-a:text-brand-accent-pink sm:prose-img:w-[75%] hover:sm:prose-img:w-full sm:prose-img:transition-all sm:prose-img:duration-1000 sm:prose-img:mx-auto prose-invert'
+      class="prose prose-invert max-w-4xl md:prose-xl prose-a:text-brand-accent-pink sm:prose-img:mx-auto sm:prose-img:w-[75%] sm:prose-img:transition-all sm:prose-img:duration-1000 hover:sm:prose-img:w-full"
     >
       <Content />
     </section>

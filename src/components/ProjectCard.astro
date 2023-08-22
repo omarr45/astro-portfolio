@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
 type ProjectCardProps = {
   image: string;
@@ -10,16 +10,16 @@ type ProjectCardProps = {
 };
 
 const {
-  image = 'https://placehold.co/600x400?text=Project',
-  title = 'Project 1',
-  description = 'Lorem ipsum dolor sit amet, ',
-  categories = ['ReactJS', 'Firebase', 'TailwindCSS'],
-  slug = 'project-1',
+  image = "https://placehold.co/600x400?text=Project",
+  title = "Project 1",
+  description = "Lorem ipsum dolor sit amet, ",
+  categories = ["ReactJS", "Firebase", "TailwindCSS"],
+  slug = "project-1",
 } = Astro.props as ProjectCardProps;
 ---
 
 <li
-  class='w-full text-base bg-brand-bg-dark p-3 rounded-xl space-y-2 sm:flex sm:gap-4 sm:text-base sm:space-y-0 hover:scale-[1.02] transition-transform duration-300'
+  class="w-full space-y-2 rounded-xl bg-brand-bg-dark p-3 text-base transition-transform duration-300 hover:scale-[1.02] sm:flex sm:gap-4 sm:space-y-0 sm:text-base"
 >
   <Image
     quality={100}
@@ -27,37 +27,37 @@ const {
     alt={`Screenshot of ${title} website`}
     width={600}
     height={400}
-    class='rounded-lg w-full sm:w-auto sm:max-h-48 h-full aspect-[3/2] object-cover'
+    class="aspect-[3/2] h-full w-full rounded-lg object-cover sm:max-h-48 sm:w-auto"
   />
   <div
-    class='space-y-2 sm:space-y-0 sm:w-full sm:text-left sm:flex sm:flex-col sm:justify-start sm:gap-3'
+    class="space-y-2 sm:flex sm:w-full sm:flex-col sm:justify-start sm:gap-3 sm:space-y-0 sm:text-left"
   >
-    <div class='sm:flex sm:items-center sm:justify-between'>
-      <h3 class='text-2xl font-semibold tracking-wide sm:text-4xl'>
+    <div class="sm:flex sm:items-center sm:justify-between">
+      <h3 class="text-2xl font-semibold tracking-wide sm:text-4xl">
         {title}
       </h3>
       <a
-        class='hidden border-2 border-brand-accent-green bg-transparent w-fit py-1.5 px-3 font-normal tracking-wide hover:text-brand-bg-dark duration-300 hover:bg-brand-accent-green rounded-md text-lg cursor-pointer focus:outline-none focus-visible:outline-4 focus-visible:-outline-offset-1 focus-visible:outline-brand-accent-green sm:inline-block transition-none'
+        class="hidden w-fit cursor-pointer rounded-md border-2 border-brand-accent-green bg-transparent px-3 py-1.5 text-lg font-normal tracking-wide transition-none duration-300 hover:bg-brand-accent-green hover:text-brand-bg-dark focus:outline-none focus-visible:outline-4 focus-visible:-outline-offset-1 focus-visible:outline-brand-accent-green sm:inline-block"
         href={`/projects/${slug}`}>More Details</a
       >
     </div>
     <div
-      aria-label='Project categories'
-      class='flex gap-2 flex-wrap items-center justify-center sm:justify-start'
+      aria-label="Project categories"
+      class="flex flex-wrap items-center justify-center gap-2 sm:justify-start"
     >
       {
         categories
           .slice(0, 3)
           ?.map((category) => (
-            <span class='inline-block bg-brand-accent-purple text-brand-bg-dark px-2 py-1 rounded-lg text-sm font-semibold'>
+            <span class="inline-block rounded-lg bg-brand-accent-purple px-2 py-1 text-sm font-semibold text-brand-bg-dark">
               {category}
             </span>
           ))
       }
     </div>
-    <p class='md:text-lg md:text-justify'>{description}</p>
+    <p class="md:text-justify md:text-lg">{description}</p>
     <a
-      class='block w-fit mx-auto py-2 px-4 font-semibold tracking-wide hover:tracking-widest focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent-green hover:bg-brand-accent-green-hover bg-brand-accent-green rounded-md text-brand-bg text-lg cursor-pointer sm:hidden'
+      class="mx-auto block w-fit cursor-pointer rounded-md bg-brand-accent-green px-4 py-2 text-lg font-semibold tracking-wide text-brand-bg hover:bg-brand-accent-green-hover hover:tracking-widest focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent-green sm:hidden"
       href={`/projects/${slug}`}>More Details</a
     >
   </div>
