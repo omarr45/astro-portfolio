@@ -44,7 +44,7 @@ const { Content } = await project.render();
             title='Github Link'
             target='_blank'
             href={project.data.links?.github}
-            class='ml-auto bg-brand-accent-pink text-brand-bg-dark rounded-full p-1 sm:p-1.5'>
+            class='ml-auto bg-brand-accent-pink text-brand-bg-dark rounded-full p-1 sm:p-1.5 focus:outline-none focus-visible:outline-2 focus-visible:outline-brand-accent-pink focus-visible:outline-offset-4'>
             <Icon name='simple-icons:github' size={26} />
           </a>
         )
@@ -57,7 +57,7 @@ const { Content } = await project.render();
             href={project.data.links?.live}
             class={`${
               project.data.links.github ? '' : 'ml-auto'
-            } bg-brand-accent-green text-brand-bg-dark rounded-full p-1 sm:p-1.5`}>
+            } bg-brand-accent-green text-brand-bg-dark rounded-full p-1 sm:p-1.5 focus:outline-none focus-visible:outline-2 focus-visible:outline-brand-accent-green focus-visible:outline-offset-4`}>
             <Icon name='mdi:launch' size={26} />
           </a>
         )

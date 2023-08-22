@@ -145,20 +145,10 @@ import MainLayout from '../../layouts/MainLayout.astro';
   ul {
     &:where(.columns-2) {
       li {
-        list-style: none;
         margin-left: 1rem;
-        position: relative;
 
-        &:before {
-          position: absolute;
-          content: '\2022';
+        &::marker {
           color: #ff79c6;
-          width: 1em;
-          margin-left: -0.75em;
-
-          @media (min-width: 768px) {
-            font-size: 1.5rem;
-          }
         }
       }
     }

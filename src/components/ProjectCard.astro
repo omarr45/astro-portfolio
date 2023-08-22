@@ -37,7 +37,7 @@ const {
         {title}
       </h3>
       <a
-        class='hidden border-2 border-brand-accent-green bg-transparent w-fit py-1.5 px-3 font-normal tracking-wide text-brand-bg-te hover:text-brand-bg-dark duration-300 hover:bg-brand-accent-green rounded-md text-lg cursor-pointer sm:inline-block'
+        class='hidden border-2 border-brand-accent-green bg-transparent w-fit py-1.5 px-3 font-normal tracking-wide hover:text-brand-bg-dark duration-300 hover:bg-brand-accent-green rounded-md text-lg cursor-pointer focus:outline-none focus-visible:outline-4 focus-visible:-outline-offset-1 focus-visible:outline-brand-accent-green sm:inline-block transition-none'
         href={`/projects/${slug}`}>More Details</a
       >
     </div>
@@ -57,8 +57,8 @@ const {
     </div>
     <p class='md:text-lg md:text-justify'>{description}</p>
     <a
-      class='block w-fit mx-auto py-2 px-4 font-semibold tracking-wide hover:tracking-widest transition-[letter-spacing] hover:bg-brand-accent-green-hover duration-300 bg-brand-accent-green rounded-md text-brand-bg text-lg cursor-pointer sm:hidden'
-      href={`/projects/${slug}`}>View Project</a
+      class='block w-fit mx-auto py-2 px-4 font-semibold tracking-wide hover:tracking-widest focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent-green hover:bg-brand-accent-green-hover bg-brand-accent-green rounded-md text-brand-bg text-lg cursor-pointer sm:hidden'
+      href={`/projects/${slug}`}>More Details</a
     >
   </div>
 </li>

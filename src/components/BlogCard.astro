@@ -28,7 +28,9 @@ const { slug, data: post } = Astro.props as CollectionEntry<'blog'>;
   {
     post.date && (
       <date>
-        <a href={`/blog/${slug}`}>{formatDate(post.date)}</a>
+        <a tabindex='-1' href={`/blog/${slug}`}>
+          {formatDate(post.date)}
+        </a>
       </date>
     )
   }

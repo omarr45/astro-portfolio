@@ -40,6 +40,11 @@ select {
   font: inherit;
 }
 
+::selection {
+  background-color: #bd93f9;
+  color: #282a36;
+}
+
 .squiggle {
   position: relative;
 }
