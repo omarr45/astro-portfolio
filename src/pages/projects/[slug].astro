@@ -1,10 +1,10 @@
 ---
-import { Icon } from "astro-icon";
-import MainLayout from "../../layouts/MainLayout.astro";
-import { getCollection, CollectionEntry } from "astro:content";
+import { Icon } from 'astro-icon';
+import MainLayout from '../../layouts/MainLayout.astro';
+import { getCollection, CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
-  const projects = await getCollection("projects");
+  const projects = await getCollection('projects');
 
   return projects.map((project) => ({
     params: { slug: project.slug },
@@ -13,17 +13,17 @@ export async function getStaticPaths() {
 }
 
 type Props = {
-  project: CollectionEntry<"projects">;
+  project: CollectionEntry<'projects'>;
 };
 
 const colors = [
-  "bg-brand-accent-cyan",
-  "bg-brand-accent-green",
-  "bg-brand-accent-orange",
-  "bg-brand-accent-pink",
-  "bg-brand-accent-purple",
-  "bg-brand-accent-red",
-  "bg-brand-accent-yellow",
+  'bg-brand-accent-cyan',
+  'bg-brand-accent-green',
+  'bg-brand-accent-orange',
+  'bg-brand-accent-pink',
+  'bg-brand-accent-purple',
+  'bg-brand-accent-red',
+  'bg-brand-accent-yellow',
 ];
 
 const { project: project } = Astro.props;
@@ -32,43 +32,43 @@ const { Content } = await project.render();
 
 <MainLayout title={`${project.data.title} | Omar45`}>
   <article
-    class="m-auto my-2 w-full max-w-4xl rounded-2xl bg-brand-bg-dark p-6 text-center sm:p-10 sm:text-left"
+    class='m-auto my-2 w-full max-w-4xl rounded-2xl bg-brand-bg-dark p-6 text-center sm:p-10 sm:text-left'
   >
-    <div class="flex flex-row items-center justify-center gap-2">
-      <h1 class="text-4xl font-bold md:text-5xl">
+    <div class='flex flex-row items-center justify-center gap-2'>
+      <h1 class='text-4xl font-bold md:text-5xl'>
         {project.data.title}
       </h1>
       {
         project.data.links?.github && (
           <a
-            title="Github Link"
-            target="_blank"
+            title='Github Link'
+            target='_blank'
             href={project.data.links?.github}
-            class="ml-auto rounded-full bg-brand-accent-pink p-1 text-brand-bg-dark focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-accent-pink sm:p-1.5"
+            class='ml-auto rounded-full bg-brand-accent-pink p-1 text-brand-bg-dark focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-accent-pink sm:p-1.5'
           >
-            <Icon name="simple-icons:github" size={26} />
+            <Icon name='simple-icons:github' size={26} />
           </a>
         )
       }
       {
         project.data.links?.live && (
           <a
-            title="Live Link"
-            target="_blank"
+            title='Live Link'
+            target='_blank'
             href={project.data.links?.live}
             class={`${
-              project.data.links.github ? "" : "ml-auto"
+              project.data.links.github ? '' : 'ml-auto'
             } rounded-full bg-brand-accent-green p-1 text-brand-bg-dark focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-accent-green sm:p-1.5`}
           >
-            <Icon name="mdi:launch" size={26} />
+            <Icon name='mdi:launch' size={26} />
           </a>
         )
       }
     </div>
 
-    <hr class="my-4 opacity-20" />
+    <hr class='my-4 opacity-20' />
     <div
-      class="flex flex-wrap items-center justify-center gap-2 sm:justify-start"
+      class='flex flex-wrap items-center justify-center gap-2 sm:justify-start'
     >
       {
         project.data.technologies.map((technology, idx) => (
@@ -83,7 +83,7 @@ const { Content } = await project.render();
       }
     </div>
     <section
-      class="prose prose-invert max-w-4xl md:prose-xl prose-a:text-brand-accent-purple prose-ul:list-none prose-ul:p-0 sm:prose-ul:list-disc sm:prose-ul:pl-6 sm:prose-img:mx-auto sm:prose-img:w-[75%] sm:prose-img:transition-all sm:prose-img:duration-1000 hover:sm:prose-img:w-full"
+      class='prose prose-invert max-w-4xl md:prose-xl prose-a:text-brand-accent-purple prose-ul:list-none prose-ul:p-0 sm:prose-ul:list-disc sm:prose-ul:pl-6 sm:prose-img:mx-auto sm:prose-img:w-[75%] sm:prose-img:transition-all sm:prose-img:duration-1000 hover:sm:prose-img:w-full'
     >
       <Content />
     </section>
@@ -92,10 +92,10 @@ const { Content } = await project.render();
 
 <script>
   // get all svgs inside article
-  const svgs = document.querySelectorAll("article svg");
+  const svgs = document.querySelectorAll('article svg');
   // set their width to 20 on small screens and 30 on larger screens
   svgs.forEach((svg) => {
-    svg.setAttribute("width", window.innerWidth > 768 ? "30" : "20");
-    svg.setAttribute("height", window.innerWidth > 768 ? "30" : "20");
+    svg.setAttribute('width', window.innerWidth > 768 ? '30' : '20');
+    svg.setAttribute('height', window.innerWidth > 768 ? '30' : '20');
   });
 </script>

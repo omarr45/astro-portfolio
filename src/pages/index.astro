@@ -1,18 +1,18 @@
 ---
-import ProjectCard from "../components/ProjectCard.astro";
-import { Icon } from "astro-icon";
-import MainLayout from "../layouts/MainLayout.astro";
-import { getCollection } from "astro:content";
-import BlogCard from "../components/BlogCard.astro";
+import ProjectCard from '../components/ProjectCard.astro';
+import { Icon } from 'astro-icon';
+import MainLayout from '../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+import BlogCard from '../components/BlogCard.astro';
 
-const blogPosts = await getCollection("blog", ({ data }) => {
+const blogPosts = await getCollection('blog', ({ data }) => {
   return !data.draft && data.date < new Date();
 });
 blogPosts.sort((a, b) => {
   return (new Date(b.data.date) as any) - (new Date(a.data.date) as any);
 });
 
-const projects = await getCollection("projects", ({ data }) => {
+const projects = await getCollection('projects', ({ data }) => {
   return !data.draft && data.featured;
 });
 projects.sort((a, b) => {
@@ -20,37 +20,37 @@ projects.sort((a, b) => {
 });
 ---
 
-<MainLayout title="Omar45">
+<MainLayout title='Omar45'>
   <section
-    class="flex min-h-[calc(100vh-12rem)] flex-col items-center justify-center gap-4 p-4 text-center sm:min-h-[calc(100vh-6rem)]"
+    class='flex min-h-[calc(100vh-12rem)] flex-col items-center justify-center gap-4 p-4 text-center sm:min-h-[calc(100vh-6rem)]'
   >
     <Icon
-      class="mb-6 text-brand-accent-cyan"
-      name="twemoji:waving-hand-medium-light-skin-tone"
+      class='mb-6 text-brand-accent-cyan'
+      name='twemoji:waving-hand-medium-light-skin-tone'
       size={70}
-      aria-label="Waving Hand Emoji"
+      aria-label='Waving Hand Emoji'
     />
-    <h1 class="text-5xl font-extrabold sm:text-7xl md:text-9xl">
-      Hi<span class="text-brand-accent-pink">!</span>
+    <h1 class='text-5xl font-extrabold sm:text-7xl md:text-9xl'>
+      Hi<span class='text-brand-accent-pink'>!</span>
        I'm Omar
     </h1>
-    <h2 class="text-2xl font-medium sm:text-3xl md:text-5xl">
+    <h2 class='text-2xl font-medium sm:text-3xl md:text-5xl'>
       a front-end developer
     </h2>
     <Icon
-      class="mt-16 animate-[bounce_1.5s_ease-in-out_infinite] text-brand-accent-purple"
-      name="iconoir:mouse-scroll-wheel"
-      aria-label="Scroll Down Icon"
+      class='mt-16 animate-[bounce_1.5s_ease-in-out_infinite] text-brand-accent-purple'
+      name='iconoir:mouse-scroll-wheel'
+      aria-label='Scroll Down Icon'
       size={40}
     />
   </section>
   <section
-    class="flex w-full flex-col items-center justify-center gap-4 p-4 text-center"
+    class='flex w-full flex-col items-center justify-center gap-4 p-4 text-center'
   >
-    <h3 class="text-3xl font-semibold sm:text-4xl md:mb-5 md:text-6xl">
-      Featured <span class="squiggle squiggle-pink">Projects</span>
+    <h3 class='text-3xl font-semibold sm:text-4xl md:mb-5 md:text-6xl'>
+      Featured <span class='squiggle squiggle-pink'>Projects</span>
     </h3>
-    <ul class="w-full space-y-3">
+    <ul class='w-full space-y-3'>
       {
         projects.map((project) => (
           <ProjectCard
@@ -62,23 +62,23 @@ projects.sort((a, b) => {
           />
         ))
       }
-      <li class="col-span-2 rounded-xl bg-brand-bg-dark p-3 sm:col-span-1">
-        <h4 class="w-full text-2xl font-semibold">
-          <a class="flex items-center justify-between" href="/projects">
+      <li class='col-span-2 rounded-xl bg-brand-bg-dark p-3 sm:col-span-1'>
+        <h4 class='w-full text-2xl font-semibold'>
+          <a class='flex items-center justify-between' href='/projects'>
             All Projects
-            <Icon name="bi:caret-right" size={20} />
+            <Icon name='bi:caret-right' size={20} />
           </a>
         </h4>
       </li>
     </ul>
   </section>
   <section
-    class="flex w-full flex-col items-center justify-center gap-4 p-4 text-center"
+    class='flex w-full flex-col items-center justify-center gap-4 p-4 text-center'
   >
-    <h3 class="mt-10 text-3xl font-semibold sm:text-4xl md:mb-5 md:text-6xl">
-      Latest <span class="squiggle squiggle-green">Blog Posts</span>
+    <h3 class='mt-10 text-3xl font-semibold sm:text-4xl md:mb-5 md:text-6xl'>
+      Latest <span class='squiggle squiggle-green'>Blog Posts</span>
     </h3>
-    <ul class="grid w-full grid-cols-2 gap-3 text-left">
+    <ul class='grid w-full grid-cols-2 gap-3 text-left'>
       {
         blogPosts
           .slice(0, 3)
@@ -86,13 +86,13 @@ projects.sort((a, b) => {
       }
       <BlogCard
         data={{
-          title: "All Blog Posts",
-          description: "A list of all my blog posts",
+          title: 'All Blog Posts',
+          description: 'A list of all my blog posts',
           date: null,
           draft: false,
-          author: "Omar AbdulRahman",
+          author: 'Omar AbdulRahman',
         }}
-        slug=""
+        slug=''
       />
     </ul>
   </section>
