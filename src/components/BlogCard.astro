@@ -14,13 +14,15 @@ const { slug, data: post } = Astro.props as CollectionEntry<'blog'>;
   </h2>
   {
     post.categories && (
-      <div class='my-2 flex flex-wrap gap-2'>
+      <section
+        class='my-2 flex flex-wrap gap-2'
+        aria-label='Blogpost categories'>
         {post.categories.sort().map((category) => (
           <span class='inline-block bg-brand-accent-cyan text-brand-bg-dark px-2 py-1 rounded-lg text-sm font-semibold'>
             {category}
           </span>
         ))}
-      </div>
+      </section>
     )
   }
   {

@@ -4,80 +4,81 @@ import { Icon } from 'astro-icon';
 
 <footer class='p-4 text-center bg-brand-bg-dark space-y-4'>
   <p>Copyright &copy; <span id='year'></span> - Omar AbdulRahman</p>
-  <section>
-    <ul class='flex items-center justify-center gap-4'>
-      <li title='LinkedIn'>
-        <a
-          href='https://www.linkedin.com/in/omar45/'
-          target='_blank'
-          aria-label='LinkedIn Account'
-        >
-          <Icon
-            name='simple-icons:linkedin'
-            size={24}
-            class='hover:text-brand-accent-cyan'
-          />
-        </a>
-      </li>
-      <li title='Buy Me a Coffee'>
-        <a
-          href='https://www.buymeacoffee.com/omar45/'
-          target='_blank'
-          aria-label='Buy Me a Coffee Account'
-        >
-          <Icon
-            name='simple-icons:buymeacoffee'
-            size={24}
-            class='hover:text-brand-accent-orange'
-          />
-        </a>
-      </li>
-      <li title='GitHub'>
-        <a
-          href='https://www.github.com/omarr45/'
-          target='_blank'
-          aria-label='GitHub Account'
-        >
-          <Icon
-            name='simple-icons:github'
-            size={24}
-            class='hover:text-brand-accent-purple'
-          />
-        </a>
-      </li>
-      <li title='YouTube'>
-        <a
-          href='https://www.youtube.com/@Omar45/'
-          target='_blank'
-          aria-label='YouTube Channel'
-        >
-          <Icon
-            name='simple-icons:youtube'
-            size={24}
-            class='hover:text-brand-accent-red'
-          />
-        </a>
-      </li>
-      <li title='Mail'>
-        <a href='mailto:hello@omar45.com' aria-label='e-mail me'>
-          <Icon
-            name='simple-icons:gmail'
-            size={24}
-            class='hover:text-brand-accent-red'
-          />
-        </a>
-      </li>
-      <li title='RSS Feed'>
-        <a href='/rss.xml' aria-label='RSS Feed'>
-          <Icon
-            name='simple-icons:rss'
-            size={20}
-            class='hover:text-brand-accent-orange'
-          />
-        </a>
-      </li>
-    </ul>
-  </section>
+  <ul
+    class='flex items-center justify-center gap-4'
+    aria-label='Social Media Links'
+  >
+    <li title='LinkedIn'>
+      <a
+        href='https://www.linkedin.com/in/omar45/'
+        target='_blank'
+        aria-label='LinkedIn Account'
+      >
+        <Icon
+          name='simple-icons:linkedin'
+          size={24}
+          class='hover:text-brand-accent-cyan'
+        />
+      </a>
+    </li>
+    <li title='Buy Me a Coffee'>
+      <a
+        href='https://www.buymeacoffee.com/omar45/'
+        target='_blank'
+        aria-label='Buy Me a Coffee Account'
+      >
+        <Icon
+          name='simple-icons:buymeacoffee'
+          size={24}
+          class='hover:text-brand-accent-orange'
+        />
+      </a>
+    </li>
+    <li title='GitHub'>
+      <a
+        href='https://www.github.com/omarr45/'
+        target='_blank'
+        aria-label='GitHub Account'
+      >
+        <Icon
+          name='simple-icons:github'
+          size={24}
+          class='hover:text-brand-accent-purple'
+        />
+      </a>
+    </li>
+    <li title='YouTube'>
+      <a
+        href='https://www.youtube.com/@Omar45/'
+        target='_blank'
+        aria-label='YouTube Channel'
+      >
+        <Icon
+          name='simple-icons:youtube'
+          size={24}
+          class='hover:text-brand-accent-red'
+        />
+      </a>
+    </li>
+    <li title='Mail'>
+      <a href='mailto:hello@omar45.com' aria-label='e-mail me'>
+        <Icon
+          name='simple-icons:gmail'
+          size={24}
+          class='hover:text-brand-accent-red'
+        />
+      </a>
+    </li>
+    <li title='RSS Feed'>
+      <a href='/rss.xml' aria-label='RSS Feed'>
+        <Icon
+          name='simple-icons:rss'
+          size={20}
+          class='hover:text-brand-accent-orange'
+        />
+      </a>
+    </li>
+  </ul>
   <p class='text-sm'>
     <span>
       <a

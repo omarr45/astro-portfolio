@@ -22,12 +22,14 @@ projects.sort((a, b) => {
 
 <MainLayout title='Omar45'>
   <section
+    aria-label='Hero Section'
     class='text-center p-4 flex flex-col items-center gap-4 min-h-[calc(100vh-12rem)] sm:min-h-[calc(100vh-6rem)] justify-center'
   >
     <Icon
       class='mb-6 text-brand-accent-cyan'
       name='twemoji:waving-hand-medium-light-skin-tone'
       size={70}
+      aria-label='Waving Hand Emoji'
     />
     <h1 class='text-5xl sm:text-7xl md:text-9xl font-extrabold'>
       Hi<span class='text-brand-accent-pink'>!</span>
@@ -39,10 +41,12 @@ projects.sort((a, b) => {
     <Icon
       class='animate-[bounce_1.5s_ease-in-out_infinite] mt-16 text-brand-accent-purple'
       name='iconoir:mouse-scroll-wheel'
+      aria-label='Scroll Down Icon'
       size={40}
     />
   </section>
   <section
+    aria-label='Featured Projects Section'
     class='w-full text-center p-4 flex flex-col items-center gap-4 justify-center'
   >
     <h3 class='text-3xl sm:text-4xl md:text-6xl font-semibold md:mb-5'>
@@ -71,6 +75,7 @@ projects.sort((a, b) => {
     </ul>
   </section>
   <section
+    aria-label='Latest Blog Posts Section'
     class='w-full text-center p-4 flex flex-col items-center gap-4 justify-center'
   >
     <h3 class='text-3xl sm:text-4xl md:text-6xl font-semibold mt-10 md:mb-5'>
