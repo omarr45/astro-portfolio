@@ -36,6 +36,8 @@ const projects = defineCollection({
           "E-Commerce",
           "Canvas API",
           "Open Source",
+          "Dark Mode",
+          "Design System",
         ]),
       ),
       links: z.object({
