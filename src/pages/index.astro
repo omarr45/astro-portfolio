@@ -6,7 +6,7 @@ import { getCollection } from 'astro:content';
 import BlogCard from '../components/BlogCard.astro';
 
 const blogPosts = await getCollection('blog', ({ data }) => {
-  return !data.draft && data.date < new Date();
+  return !data.draft && new Date(data.date) < new Date();
 });
 blogPosts.sort((a, b) => {
   return (new Date(b.data.date) as any) - (new Date(a.data.date) as any);
@@ -69,6 +69,51 @@ projects.sort((a, b) => {
             <Icon name='bi:caret-right' size={20} />
           </a>
         </h4>
+      </li>
+    </ul>
+  </section>
+  <section class='tech-stack my-4 w-full p-4 text-center md:my-10'>
+    <h3 class='my-10 text-3xl font-semibold sm:text-4xl md:mb-5 md:text-6xl'>
+      Tech <span class='squiggle squiggle-blue'>Stack</span>
+    </h3>
+    <ul
+      class='grid grid-cols-3 place-items-center gap-x-2 gap-y-10 md:mt-12 md:grid-cols-6'
+    >
+      <li>
+        <Icon name='logos:react' title='React' size={60} />
+      </li>
+      <li>
+        <Icon name='logos:redux' title='Redux' size={60} />
+      </li>
+      <li>
+        <Icon name='logos:react-router' title='React Router' size={60} />
+      </li>
+      <li>
+        <Icon name='logos:tailwindcss-icon' title='Tailwind css' size={60} />
+      </li>
+      <li>
+        <Icon name='logos:sass' title='Sass' size={60} />
+      </li>
+      <li>
+        <Icon name='logos:typescript-icon' title='TypeScript' size={60} />
+      </li>
+      <li>
+        <Icon name='logos:firebase' title='Firebase' size={60} />
+      </li>
+      <li>
+        <Icon name='logos:astro' title='Astro' size={60} />
+      </li>
+      <li>
+        <Icon name='logos:github-icon' title='GitHub' size={60} />
+      </li>
+      <li>
+        <Icon name='logos:visual-studio-code' title='VS Code' size={60} />
+      </li>
+      <li>
+        <Icon name='logos:figma' title='Figma' size={60} />
+      </li>
+      <li>
+        <Icon name='logos:lighthouse' title='SEO: lighthouse' size={60} />
       </li>
     </ul>
   </section>
