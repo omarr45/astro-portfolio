@@ -32,7 +32,7 @@ const { Content } = await project.render();
 
 <MainLayout title={`${project.data.title} | Omar45`}>
   <article
-    class='m-auto my-2 w-full max-w-4xl rounded-2xl bg-brand-bg-dark p-6 text-center sm:p-10 sm:text-left'
+    class='m-auto my-2 w-full max-w-4xl rounded-2xl bg-brand-bg-dark p-6 sm:p-10 sm:text-left'
   >
     <div class='flex flex-row items-center justify-center gap-2'>
       <h1 class='text-4xl font-bold md:text-5xl'>
@@ -68,7 +68,7 @@ const { Content } = await project.render();
 
     <hr class='my-4 opacity-20' />
     <div
-      class='flex flex-wrap items-center justify-center gap-2 sm:justify-start'
+      class='flex flex-wrap items-start justify-start gap-2'
     >
       {
         project.data.technologies.map((technology, idx) => (
@@ -83,7 +83,7 @@ const { Content } = await project.render();
       }
     </div>
     <section
-      class='prose prose-invert max-w-4xl md:prose-xl prose-a:text-brand-accent-purple prose-ul:list-none prose-ul:p-0 sm:prose-ul:list-disc sm:prose-ul:pl-6 sm:prose-img:mx-auto sm:prose-img:w-[75%] sm:prose-img:transition-all sm:prose-img:duration-1000 hover:sm:prose-img:w-full'
+      class='prose prose-invert max-w-4xl md:prose-xl prose-a:text-brand-accent-purple sm:prose-img:mx-auto sm:prose-img:w-[75%] sm:prose-img:transition-all sm:prose-img:duration-1000 hover:sm:prose-img:w-full'
     >
       <Content />
     </section>
