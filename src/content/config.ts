@@ -3,7 +3,7 @@ import { defineCollection, z } from "astro:content";
 const blog = defineCollection({
   schema: z.object({
     title: z.string(),
-    date: z.date(),
+    date: z.string(),
     draft: z.boolean(),
     author: z.enum(["Omar AbdulRahman", "Shehab Ihab", "Ahmed Tawfik"]),
     categories: z.array(
