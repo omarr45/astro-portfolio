@@ -72,10 +72,11 @@ select {
 }
 
 .image-slider {
-  margin: 0 auto;
-  /* max-width: clamp(10rem, 75vw, 100rem);
-  width: 100%; */
-  padding: clamp(0rem, 3vw, 1.5rem);
+  margin: auto;
+  max-width: clamp(12rem, 70vw, 100rem);
+  width: 100%;
+  padding-block: clamp(0rem, 3vw, 1.5rem);
+  margin-bottom: -1rem;
 }
 
 .image-slider img {
