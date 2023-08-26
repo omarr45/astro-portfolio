@@ -4,6 +4,8 @@ import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 
+import vercel from "@astrojs/vercel/serverless";
+
 // https://astro.build/config
 export default defineConfig({
   output: "hybrid",
@@ -23,5 +25,6 @@ export default defineConfig({
   //     external: ['svgo'],
   //   },
   // },
-  site: "https://omar45.vercel.app"
+  site: "https://omar45.vercel.app",
+  adapter: vercel()
 });
