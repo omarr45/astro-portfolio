@@ -20,7 +20,7 @@ const ImageSlider = ({ imgs }) => {
   };
 
   return (
-    <div className="image-slider mt-2">
+    <div className="image-slider mt-2 max-w-3xl">
       <Slider {...settings}>
         {imgs?.map((img, i) => (
           <img key={i} src={img} alt="slider" />

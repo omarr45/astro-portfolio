@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import markdoc from "@astrojs/markdoc";
 import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
@@ -7,19 +8,19 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   experimental: {
     viewTransitions: true,
-    assets: true,
+    assets: true
   },
-  integrations: [mdx(), tailwind(), react()],
+  integrations: [mdx(), tailwind(), react(), markdoc()],
   markdown: {
     shikiConfig: {
       theme: "dracula",
-      wrap: true,
-    },
+      wrap: true
+    }
   },
   // vite: {
   //   ssr: {
   //     external: ['svgo'],
   //   },
   // },
-  site: "https://omar45.vercel.app",
+  site: "https://omar45.vercel.app"
 });
