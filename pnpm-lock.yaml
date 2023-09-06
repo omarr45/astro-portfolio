@@ -35,6 +35,9 @@ dependencies:
   '@types/react-dom':
     specifier: ^18.2.7
     version: 18.2.7
+  '@vercel/analytics':
+    specifier: ^1.0.2
+    version: 1.0.2
   astro:
     specifier: ^2.10.3
     version: 2.10.3(sass@1.64.2)
@@ -2971,6 +2974,10 @@ packages:
       react: ^16.8||^17||^18
     dependencies:
       react: 18.2.0
+    dev: false
+
+  /@vercel/analytics@1.0.2:
+    resolution: {integrity: sha512-BZFxVrv24VbNNl5xMxqUojQIegEeXMI6rX3rg1uVLYUEXsuKNBSAEQf4BWEcjQDp/8aYJOj6m8V4PUA3x/cxgg==}
     dev: false
 
   /@vercel/nft@0.22.6:
