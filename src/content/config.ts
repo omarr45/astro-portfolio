@@ -27,6 +27,7 @@ const projects = defineCollection({
         z.enum([
           "ReactJS",
           "Next.js",
+          "TypeScript",
           "TailwindCSS",
           "Firebase",
           "SASS",
