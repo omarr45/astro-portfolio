@@ -1,0 +1,24 @@
+---
+import { getEntry } from 'astro:content';
+import { Icon } from 'astro-icon';
+import Heading from '../ui/Heading.astro';
+const { data: stack } = await getEntry('stack', 'tech-stack');
+---
+
+<section class='w-full space-y-4'>
+  <Heading>Teck Stack</Heading>
+  <ul class='grid grid-cols-3 gap-4 md:grid-cols-6'>
+    {
+      stack.map((i) => (
+        <li class='bg-foreground/5 rounded-xl p-5 transition-transform md:hover:scale-110'>
+          <Icon
+            name={i.icon}
+            title={i.title}
+            size={85}
+            class={` ${i.title === 'GitHub' ? 'invert-on-dark' : ''}`}
+          />
+        </li>
+      ))
+    }
+  </ul>
+</section>

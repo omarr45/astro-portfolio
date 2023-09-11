@@ -1,16 +1,16 @@
 ---
 title: Tailwind dynamic classes
-date: '2023-08-15'
+date: "2023-08-15"
 draft: false
-author: Omar AbdulRahman
 isArabic: false
 categories:
   - Development
 ---
+
 While developing this website, I came across a problem where I wanted to change the tag color dynamically based on an array of colors.
 
 ```js
-const colors = ['red-500', 'blue-500', 'green-500', 'yellow-500', 'pink-500'];
+const colors = ["red-500", "blue-500", "green-500", "yellow-500", "pink-500"];
 ```
 
 ```js
@@ -32,11 +32,11 @@ TailwindCSS provides a `safelist` option in the `tailwind.config.js` file, which
 ```js
 module.exports = {
   safelist: [
-    'bg-red-500',
-    'bg-blue-500',
-    'bg-green-500',
-    'bg-yellow-500',
-    'bg-pink-500',
+    "bg-red-500",
+    "bg-blue-500",
+    "bg-green-500",
+    "bg-yellow-500",
+    "bg-pink-500",
   ],
 };
 ```
@@ -47,7 +47,7 @@ Another way to fix this is to add a dummy element to your html, and add the clas
 
 ```html
 <div
-  class="hidden bg-red-500 bg-blue-500 bg-green-500 bg-yellow-500 bg-pink-500"
+  class="hidden bg-blue-500 bg-green-500 bg-pink-500 bg-red-500 bg-yellow-500"
 ></div>
 ```
 

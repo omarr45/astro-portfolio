@@ -1,12 +1,108 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=Zilla+Slab:wght@300;400;500;600;700&display=swap");
 
-/* :root {
-    color-scheme: light dark;
-  } */
+@keyframes move {
+  30% {
+    translate: 0px -40px;
+  }
+  70% {
+    translate: 0px 40px;
+  }
+}
+
+@keyframes move-alt {
+  30% {
+    translate: 0px -140px;
+  }
+  70% {
+    translate: 0px 140px;
+  }
+}
+
+:root {
+  --text: hsl(9, 64%, 2%);
+  --background: hsl(0, 60%, 99%);
+  --primary: hsl(101, 70%, 56%);
+  --secondary: hsl(191, 69%, 86%);
+  --accent: hsl(281, 70%, 16%);
+
+  --color-foreground: 9deg 64% 2%;
+  --color-background: 0deg 60% 99%;
+  --color-primary: 101deg 70% 56%;
+  --color-secondary: 191deg 69% 86%;
+  --color-accent: 191deg 76% 21%;
+}
+
+#blurry {
+  visibility: hidden;
+}
+
+.slick-prev:before,
+.slick-next:before,
+.slick-dots li button:before,
+.slick-dots li.slick-active button:before {
+  color: black !important;
+}
+
+:root[data-theme="dark"] {
+  --color-foreground: 0deg 60% 99%;
+  --color-background: 9deg 64% 2%;
+  --color-primary: 101deg 70% 56%;
+  --color-secondary: 191deg 69% 6%;
+  --color-accent: 191deg 76% 51%;
+
+  .slick-prev:before,
+  .slick-next:before,
+  .slick-dots li button:before,
+  .slick-dots li.slick-active button:before {
+    color: white !important;
+  }
+
+  #blurry {
+    visibility: visible;
+  }
+}
+
+.blurry-1 {
+  animation: move 12s infinite;
+}
+.blurry-2 {
+  animation: move-alt 12s infinite;
+}
 
 @media (min-width: 450px) {
   html {
     scrollbar-gutter: stable;
+  }
+
+  @keyframes move {
+    40% {
+      scale: 1.3 1;
+      translate: 20vw 25vh;
+      rotate: 0.5turn;
+    }
+    70% {
+      scale: 1.2;
+      translate: 10vw 20vh;
+    }
+  }
+
+  @keyframes move-alt {
+    40% {
+      scale: 1.3 1;
+      translate: -15vw 30vh;
+      rotate: 0.25turn;
+    }
+    70% {
+      scale: 0.8;
+      translate: -15vw 5vh;
+    }
+  }
+
+  .blurry-1 {
+    animation: move 20s infinite;
+  }
+  .blurry-2 {
+    animation: move-alt 20s infinite;
   }
 }
 
@@ -24,6 +120,7 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 img,
@@ -41,35 +138,8 @@ select {
 }
 
 ::selection {
-  background-color: #bd93f9;
-  color: #282a36;
-}
-
-.squiggle {
-  position: relative;
-}
-
-.squiggle::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  translate: 0 70%;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1;
-}
-
-.squiggle-pink::before {
-  background-image: url(./squiggle-pink.svg);
-}
-
-.squiggle-blue::before {
-  background-image: url(./squiggle-blue.svg);
-  bottom: 0.365rem;
-}
-
-.squiggle-green::before {
-  background-image: url(./squiggle-green.svg);
+  background-color: hsl(var(--color-primary));
+  color: hsl(var(--color-foreground));
 }
 
 .image-slider {
@@ -83,9 +153,4 @@ select {
 .image-slider img {
   max-width: 90vw;
   margin: 0 auto;
-}
-
-.slick-dots li button:before,
-.slick-dots li.slick-active button:before {
-  color: white !important;
 }

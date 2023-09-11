@@ -49,9 +49,11 @@ const { title, description } = Astro.props;
     <script defer src='/_vercel/insights/script.js'></script>
   </head>
 
-  <body class='grid grid-rows-[auto_1fr_auto] bg-brand-bg text-brand-text'>
+  <body class='bg-background text-foreground grid grid-rows-[auto_1fr_auto]'>
     <Navbar />
-    <main class='mx-auto grid w-full max-w-4xl place-items-center p-4'>
+    <main
+      class='mx-auto grid w-full max-w-4xl place-items-center gap-16 p-4 md:gap-28'
+    >
       <slot />
     </main>
     <Footer />

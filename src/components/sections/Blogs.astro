@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import BlogCard from '../BlogCard.astro';
+import Heading from '../ui/Heading.astro';
+
+const blogPosts = await getCollection('blog', ({ data }) => {
+  return !data.draft && new Date(data.date) < new Date();
+});
+
+blogPosts.sort((a, b) => {
+  return (new Date(b.data.date) as any) - (new Date(a.data.date) as any);
+});
+---
+
+<section class='mb-8 w-full space-y-4'>
+  <Heading>Featured Blog Posts</Heading>
+  <ul class='grid grid-cols-1 gap-2 md:grid-cols-2'>
+    {blogPosts.slice(0, 3).map((blog) => <BlogCard {...blog} />)}
+    <BlogCard />
+  </ul>
+</section>

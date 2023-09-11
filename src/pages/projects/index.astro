@@ -14,23 +14,17 @@ projects.sort((a, b) => {
 ---
 
 <Layout title='Projects | Omar45'>
-  <!-- <section class='w-full'> -->
-  <h2 class='w-full text-3xl font-semibold sm:text-4xl md:mb-5 md:text-5xl'>
-    All Projects ({projects.length})
-  </h2>
+  <section class='w-full'>
+    <h2 class='w-full text-3xl font-semibold sm:text-4xl md:mb-5 md:text-5xl'>
+      All Projects ({projects.length})
+    </h2>
 
-  <ul class='mt-4 w-full space-y-2 text-center'>
-    {
-      projects.map((proj) => (
-        <ProjectCard
-          image={proj.data.image}
-          title={proj.data.title}
-          description={proj.data.description}
-          categories={proj.data.technologies}
-          slug={proj.slug}
-        />
-      ))
-    }
-  </ul>
-  <!-- </section> -->
+    <ul class='mt-4 w-full space-y-2 text-center'>
+      {
+        projects.map((proj) => (
+          <ProjectCard data={proj.data} slug={proj.slug} />
+        ))
+      }
+    </ul>
+  </section>
 </Layout>

@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import image404 from '../assets/404.svg';
+import Button from '../components/ui/Button.astro';
 ---
 
 <Layout title='404 Not Found | Omar45'>
@@ -15,26 +16,10 @@ import image404 from '../assets/404.svg';
       While it recharges,
     </h2>
     <section
-      class='flex items-center justify-center gap-4 text-lg leading-tight text-brand-bg sm:text-xl'
+      class='text-foreground flex items-center justify-center gap-4 text-lg leading-tight sm:text-xl'
     >
-      <a
-        class='rounded bg-brand-accent-cyan px-4 py-2 font-bold hover:bg-brand-accent-cyan-hover'
-        href='/'>Go Back Home</a
-      >
-      <a
-        class='rounded bg-brand-accent-orange px-4 py-2 font-bold hover:bg-brand-accent-orange-hover'
-        href='/blog'>Check My Blog</a
-      >
+      <Button path='/'>Go Back Home</Button>
+      <Button path='/blog' secondary>Check My Blog</Button>
     </section>
-    <!-- <div class='text-7xl'>
-        <span class='text-brand-accent-cyan'>♥</span>
-        <span class='text-brand-accent-green'>♥</span>
-        <span class='text-brand-accent-orange'>♥</span>
-        <span class='text-brand-accent-pink'>♥</span>
-        <span class='text-brand-accent-purple'>♥</span>
-        <span class='text-brand-accent-red'>♥</span>
-        <span class='text-brand-accent-yellow'>♥</span>
-      </div>
-    </div> -->
   </section>
 </Layout>

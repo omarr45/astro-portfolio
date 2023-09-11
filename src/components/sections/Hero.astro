@@ -1,0 +1,86 @@
+---
+import Icon from 'astro-icon';
+---
+
+<!-- class='relative isolate mt-8 grid w-full grid-cols-1 gap-4 md:mt-16 md:scale-110 md:grid-cols-2' -->
+<section
+  class='flex flex-col items-center justify-center gap-2 overflow-hidden py-[5.5rem] text-center'
+>
+  <div
+    aria-hidden='true'
+    id='blurry'
+    class='blurry-1 text-primary/40 absolute left-0 top-40 -z-20 h-full max-h-[600px] w-full max-w-[600px] blur-3xl md:left-80 md:top-0'
+  >
+    <svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'>
+      <path
+        fill='currentColor'
+        d='M33.1,-29.9C43.9,-12.8,54.5,1.1,53.5,14.8C52.4,28.6,39.7,42.3,24.6,48.5C9.6,54.8,-7.8,53.6,-26.2,47.4C-44.5,41.2,-63.9,30.1,-68.3,14.5C-72.7,-1.1,-62.3,-21.3,-48.5,-39.1C-34.6,-56.9,-17.3,-72.4,-3.1,-70C11.1,-67.5,22.2,-47,33.1,-29.9Z'
+        transform='translate(100 100)'></path>
+    </svg>
+  </div>
+  <div
+    aria-hidden='true'
+    id='blurry'
+    class='blurry-2 text-accent/40 absolute right-10 top-36 -z-20 h-full max-h-[600px] w-full max-w-[600px] blur-3xl md:right-80 md:top-0'
+  >
+    <svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'>
+      <path
+        fill='currentColor'
+        d='M45.1,-29.8C60.7,-16.5,77,2.4,75.1,19.6C73.1,36.9,52.9,52.4,31.6,60.8C10.4,69.1,-12,70.3,-25.3,60.7C-38.6,51.2,-42.8,31,-48.7,9.8C-54.6,-11.4,-62.3,-33.6,-54.4,-45.1C-46.6,-56.6,-23.3,-57.5,-4.3,-54.1C14.8,-50.7,29.6,-43,45.1,-29.8Z'
+        transform='translate(100 100)'></path>
+    </svg>
+  </div>
+  <Icon
+    class='mb-6'
+    name='twemoji:waving-hand-medium-light-skin-tone'
+    size={70}
+    aria-label='Waving Hand Emoji'
+  />
+  <h1 class='mt-8 text-[3.5rem] font-extrabold sm:text-7xl md:text-[9.5rem]'>
+    Hi! I'm <span
+      class='from-primary to-accent bg-gradient-to-r bg-clip-text text-transparent'
+      >Omar</span
+    >
+  </h1>
+  <h2 class='text-2xl font-medium sm:text-3xl md:text-5xl'>
+    a front-end developer
+  </h2>
+  <Icon
+    class='text-accent mt-16 animate-[bounce_1.5s_ease-in-out_infinite]'
+    name='iconoir:mouse-scroll-wheel'
+    aria-label='Scroll Down Icon'
+    size={40}
+  />
+  <!-- <div class='relative w-full overflow-y-hidden'>
+    <div
+      class='bg-foreground absolute bottom-24 left-1/2 -z-10 aspect-square w-10/12 max-w-lg -translate-x-1/2 translate-y-1/2 rounded-full'
+    >
+    </div>
+    <div
+      class='border-accent absolute bottom-24 left-1/2 -z-10 aspect-square w-11/12 max-w-xl -translate-x-1/2 translate-y-1/2 rounded-full border-4'
+    >
+    </div>
+    <Image
+      src={heroImg}
+      alt='hero'
+      class='mx-auto w-full max-w-lg'
+      loading='eager'
+    />
+  </div> -->
+  <!-- <div
+    class='flex flex-col items-center justify-center gap-2 text-center md:items-start'
+  >
+    <p class='text-foreground/70 text-lg capitalize md:text-xl'>
+      Front-end web developer
+    </p>
+    <h1 class='text-foreground text-5xl font-bold md:text-7xl'>
+      Omar AbdulRahman
+    </h1>
+
+    <button
+      onclick="window.open('/cv.pdf')"
+      class='bg-accent ring-offset-background focus-within:ring-accent mt-8 rounded-xl px-4 py-3 text-xl font-semibold text-white ring-opacity-50 ring-offset-4 focus-within:ring-4 focus:outline-none active:scale-95'
+      >Download CV</button
+    >
+  </div> -->
+</section>

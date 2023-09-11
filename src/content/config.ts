@@ -5,7 +5,6 @@ const blog = defineCollection({
     title: z.string(),
     date: z.string(),
     draft: z.boolean(),
-    author: z.enum(["Omar AbdulRahman", "Shehab Ihab", "Ahmed Tawfik"]),
     categories: z.array(
       z.enum(["Development", "Books", "Religion", "Travel", "Recommendations"]),
     ),
@@ -48,4 +47,14 @@ const projects = defineCollection({
     }),
 });
 
-export const collections = { blog, projects };
+const stack = defineCollection({
+  type: "data",
+  schema: z.array(
+    z.object({
+      title: z.string(),
+      icon: z.string(),
+    }),
+  ),
+});
+
+export const collections = { blog, projects, stack };

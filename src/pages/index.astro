@@ -1,27 +1,18 @@
 ---
-import ProjectCard from '../components/ProjectCard.astro';
-import { Icon } from 'astro-icon';
 import Layout from '../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
-import BlogCard from '../components/BlogCard.astro';
 
-const blogPosts = await getCollection('blog', ({ data }) => {
-  return !data.draft && new Date(data.date) < new Date();
-});
-blogPosts.sort((a, b) => {
-  return (new Date(b.data.date) as any) - (new Date(a.data.date) as any);
-});
-
-const projects = await getCollection('projects', ({ data }) => {
-  return !data.draft && data.featured;
-});
-projects.sort((a, b) => {
-  return b.data.title.localeCompare(a.data.title);
-});
+import Hero from '../components/sections/Hero.astro';
+import Stack from '../components/sections/Stack.astro';
+import Projects from '../components/sections/Projects.astro';
+import Blogs from '../components/sections/Blogs.astro';
 ---
 
 <Layout title='Omar45'>
-  <section
+  <Hero />
+  <Projects />
+  <Stack />
+  <Blogs />
+  <!-- <section
     class='flex min-h-[calc(100vh-12rem)] flex-col items-center justify-center gap-4 p-4 text-center sm:min-h-[calc(100vh-6rem)]'
   >
     <Icon
@@ -164,5 +155,5 @@ projects.sort((a, b) => {
         slug=''
       />
     </ul>
-  </section>
+  </section> -->
 </Layout>

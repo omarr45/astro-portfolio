@@ -1,37 +1,123 @@
-<nav class='bg-brand-bg-dark text-xl font-bold'>
-  <ul
-    class='mx-auto flex w-full max-w-4xl flex-wrap items-center justify-center gap-[1rem_2rem] p-4'
+---
+import { Icon } from 'astro-icon';
+
+const links = [
+  {
+    name: 'Blog',
+    url: '/blog',
+  },
+  {
+    name: 'Projects',
+    url: '/projects',
+  },
+  {
+    name: 'CV',
+    url: '/cv',
+  },
+];
+---
+
+<nav class='border-b-foreground/10 relative z-40 border-0 border-b-2 py-3'>
+  <div
+    id='wrapper'
+    class='mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-3 px-4 font-semibold'
   >
-    <li
-      class='grid flex-[1_0_100%] place-items-center text-5xl sm:mr-auto sm:block sm:flex-auto'
+    <a
+      title='Omar AbdulRahman'
+      id='logo'
+      href='/'
+      class='focus-visible:text-accent focus-visible:outline-accent hover:text-accent flex items-center justify-center gap-3 px-2 text-4xl font-bold focus:outline-none focus-visible:outline-dashed'
     >
-      <a
-        href='/'
-        aria-label='Home'
-        class='rounded-sm focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-brand-accent-purple'
-        >Omar 45</a
-      >
-    </li>
-    <li class='hover:underline'>
-      <a
-        href='/projects'
-        class='rounded-sm focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-brand-accent-pink'
-        >Projects</a
-      >
-    </li>
-    <li class='hover:underline'>
-      <a
-        href='/blog'
-        class='rounded-sm focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-brand-accent-pink'
-        >Blog</a
-      >
-    </li>
-    <li class='hover:underline'>
-      <a
-        href='/cv'
-        class='rounded-sm focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-brand-accent-pink'
-        >CV</a
-      >
-    </li>
-  </ul>
+      Omar
+    </a>
+    <button
+      id='theme-toggle'
+      class='hover:text-accent focus-within:text-accent focus-within:outline-accent focus-visible:outline-accent ml-auto focus:outline-none focus-visible:outline-dashed'
+      title='Theme toggle'
+    >
+      <Icon name='icon-park-outline:dark-mode' class='inline h-6 w-6' />
+    </button>
+    <button id='menu-toggle' class='md:hidden' title='Menu toggle'>
+      <Icon name='octicon:three-bars' class='inline h-6 w-6' />
+    </button>
+    <ul
+      class='hidden max-w-4xl basis-full gap-2 space-y-2 pl-1 pt-2 text-lg md:flex md:max-h-max md:basis-auto md:items-center md:justify-center md:space-y-0 md:pt-0'
+    >
+      {
+        links.map(({ name, url }) => (
+          <li class='hover:text-accent focus:outline-none'>
+            <a
+              href={url}
+              class='focus-visible:text-accent focus-visible:outline-accent px-2 py-1 focus:outline-none focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-2'
+            >
+              {name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  <script>
+    // Toggle the mobile menu
+    const menu = document.querySelector('nav ul');
+    const toggle = document.querySelector('#menu-toggle');
+    toggle!.addEventListener('click', () => {
+      menu && menu.classList.toggle('hidden');
+    });
+
+    // Close the mobile menu when a link is clicked
+    const links = document.querySelectorAll('nav ul li a');
+    links.forEach((link) => {
+      link.addEventListener('click', () => {
+        menu && menu.classList.toggle('hidden');
+      });
+    });
+
+    // handle dark mode via prefers-color-scheme
+    const darkMode = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeToggle = document.querySelector('#theme-toggle');
+    const setDarkMode = (darkMode: boolean) => {
+      if (darkMode) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('astro-theme', 'dark');
+        document.querySelectorAll('section').forEach((section) => {
+          section.classList.add('prose-invert');
+        });
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('astro-theme', 'light');
+        document.querySelectorAll('section').forEach((section) => {
+          section.classList.remove('prose-invert');
+        });
+      }
+    };
+
+    // set the initial theme only if it's not already set
+    const localTheme = localStorage.getItem('astro-theme');
+    if (!localTheme) {
+      setDarkMode(darkMode.matches);
+    } else {
+      setDarkMode(localTheme === 'dark');
+    }
+
+    // listen for changes
+    darkModeToggle!.addEventListener('click', () => {
+      if (document.documentElement.getAttribute('data-theme') === 'light') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('astro-theme', 'dark');
+        // add 'prose-invert' to any article element
+        document.querySelectorAll('section').forEach((section) => {
+          section.classList.add('prose-invert');
+        });
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('astro-theme', 'light');
+        // remove 'prose-invert' from any article element
+        document.querySelectorAll('section').forEach((section) => {
+          section.classList.remove('prose-invert');
+        });
+      }
+    });
+  </script>
 </nav>

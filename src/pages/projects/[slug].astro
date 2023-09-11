@@ -1,7 +1,8 @@
 ---
 import { Icon } from 'astro-icon';
 import Layout from '../../layouts/Layout.astro';
-import { getCollection, CollectionEntry } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Tag from '../../components/ui/Tag.astro';
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects');
@@ -16,23 +17,13 @@ type Props = {
   project: CollectionEntry<'projects'>;
 };
 
-const colors = [
-  'bg-brand-accent-cyan',
-  'bg-brand-accent-green',
-  'bg-brand-accent-orange',
-  'bg-brand-accent-pink',
-  'bg-brand-accent-purple',
-  'bg-brand-accent-red',
-  'bg-brand-accent-yellow',
-];
-
 const { project: project } = Astro.props;
 const { Content } = await project.render();
 ---
 
 <Layout title={`${project.data.title} | Omar45`}>
   <article
-    class='m-auto my-2 w-full max-w-4xl rounded-2xl bg-brand-bg-dark p-6 sm:p-10 sm:text-left'
+    class='bg-foreground/5 m-auto my-2 w-full max-w-4xl rounded-2xl p-6 sm:p-10 sm:text-left'
   >
     <div class='flex flex-row items-center justify-center gap-2'>
       <h1 class='text-4xl font-bold md:text-5xl'>
@@ -44,7 +35,8 @@ const { Content } = await project.render();
             title='Github Link'
             target='_blank'
             href={project.data.links?.github}
-            class='ml-auto rounded-full bg-brand-accent-pink p-1 text-brand-bg-dark focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-accent-pink sm:p-1.5'
+            class='bg-accent text-background focus-visible:outline-accent ml-auto rounded-full p-1 focus:outline-none 
+            focus-visible:outline-2 focus-visible:outline-offset-4 active:scale-90 sm:p-1.5'
           >
             <Icon name='simple-icons:github' size={26} />
           </a>
@@ -58,7 +50,7 @@ const { Content } = await project.render();
             href={project.data.links?.live}
             class={`${
               project.data.links.github ? '' : 'ml-auto'
-            } rounded-full bg-brand-accent-green p-1 text-brand-bg-dark focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-accent-green sm:p-1.5`}
+            } bg-primary focus-visible:outline-primary rounded-full p-1 text-black focus:outline-none focus-visible:outline-2  focus-visible:outline-offset-4 active:scale-90 sm:p-1.5`}
           >
             <Icon name='mdi:launch' size={26} />
           </a>
@@ -66,22 +58,16 @@ const { Content } = await project.render();
       }
     </div>
 
-    <hr class='my-4 opacity-20' />
+    <hr class='my-4 opacity-30' />
     <div class='flex flex-wrap items-start justify-start gap-2'>
       {
         project.data.technologies.map((technology, idx) => (
-          <span
-            class={`${
-              colors[idx % colors.length]
-            } inline-block rounded-lg px-2 py-1 text-sm font-semibold text-brand-bg-dark`}
-          >
-            {technology}
-          </span>
+          <Tag>{technology}</Tag>
         ))
       }
     </div>
     <section
-      class='prose prose-invert max-w-4xl md:prose-xl prose-a:text-brand-accent-purple sm:prose-img:mx-auto sm:prose-img:w-[75%] sm:prose-img:transition-all sm:prose-img:duration-1000 hover:sm:prose-img:w-full'
+      class='marker:text-accent prose-a:text-primary prose prose-invert max-w-4xl md:prose-xl sm:prose-img:mx-auto sm:prose-img:w-[75%] sm:prose-img:transition-all sm:prose-img:duration-1000 hover:sm:prose-img:w-full'
     >
       <Content />
     </section>

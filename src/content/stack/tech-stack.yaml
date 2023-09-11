@@ -1,0 +1,24 @@
+- title: React
+  icon: logos:react
+- title: React Router
+  icon: logos:react-router
+- title: Tailwind css
+  icon: logos:tailwindcss-icon
+- title: Sass
+  icon: logos:sass
+- title: TypeScript
+  icon: logos:typescript-icon
+- title: Firebase
+  icon: logos:firebase
+- title: Astro
+  icon: simple-icons:astro
+- title: GitHub
+  icon: simple-icons:github
+- title: VS Code
+  icon: logos:visual-studio-code
+- title: Figma
+  icon: logos:figma
+- title: "SEO: Lighthouse"
+  icon: logos:lighthouse
+- title: Accessibility
+  icon: ion:accessibility

@@ -1,38 +1,33 @@
 ---
 import { Icon } from 'astro-icon';
-import { CollectionEntry } from 'astro:content';
-import { formatDate } from '../utils/utils';
-const { slug, data: post } = Astro.props as CollectionEntry<'blog'>;
+import Tag from './ui/Tag.astro';
+const { data, slug } = Astro.props;
 ---
 
-<li class='col-span-2 rounded-xl bg-brand-bg-dark p-3 sm:col-span-1'>
-  <h2 class='w-full text-2xl font-semibold hover:text-brand-accent-cyan'>
-    <a class='flex items-center justify-between' href={`/blog/${slug}`}>
-      {post.title}
-      <Icon name='bi:caret-right' size={20} />
-    </a>
-  </h2>
-  {
-    post.categories && (
-      <section
-        class='my-2 flex flex-wrap gap-2'
-        aria-label='Blogpost categories'
-      >
-        {post.categories.sort().map((category) => (
-          <span class='inline-block rounded-lg bg-brand-accent-cyan px-2 py-1 text-sm font-semibold text-brand-bg-dark'>
-            {category}
-          </span>
-        ))}
-      </section>
-    )
-  }
-  {
-    post.date && (
-      <date>
-        <a tabindex='-1' href={`/blog/${slug}`}>
-          {formatDate(post.date)}
-        </a>
-      </date>
-    )
-  }
+<li
+  class='bg-foreground/5 focus-within:text-accent hover:text-accent focus-within:outline-accent rounded-2xl p-4 outline outline-transparent transition-colors focus-within:outline-4'
+>
+  <a
+    href={data ? `/blog/${slug}` : '/blog/'}
+    class='flex items-start justify-between font-medium focus:outline-none'
+  >
+    {
+      data ? (
+        <div class='space-y-2'>
+          <h3 class='text-2xl font-semibold md:text-3xl'>{data.title}</h3>
+          <div class='flex flex-wrap gap-2'>
+            {data.categories.sort().map((category: String) => (
+              <Tag>{category}</Tag>
+            ))}
+          </div>
+          <date class='block'>{data.date}</date>
+        </div>
+      ) : (
+        <div>
+          <h3 class='text-2xl font-semibold md:text-3xl'>All Blog Posts</h3>
+        </div>
+      )
+    }
+    <Icon name='bi:caret-right' class='text-primary mt-2' size={25} />
+  </a>
 </li>

@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { getCollection, CollectionEntry } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
   const blogPosts = await getCollection('blog');
@@ -11,6 +11,7 @@ export async function getStaticPaths() {
   }));
 }
 import { formatDate } from '../../utils/utils';
+import Tag from '../../components/ui/Tag.astro';
 
 type Props = {
   post: CollectionEntry<'blog'>;
@@ -22,22 +23,14 @@ const { Content } = await post.render();
 
 <Layout title={`${post.data.title} | Omar45`}>
   <article
-    class='m-auto my-2 w-full max-w-4xl rounded-2xl bg-brand-bg-dark p-6 sm:p-10'
+    class='bg-foreground/5 m-auto my-2 w-full max-w-4xl rounded-2xl p-6 sm:p-10'
     dir={post.data.isArabic ? 'rtl' : 'ltr'}
   >
     <h1 class='text-3xl font-bold sm:text-4xl md:text-5xl'>
       {post.data.title}
     </h1>
     <div class={`flex flex-wrap gap-2 ${post.data.isArabic ? 'mt-6' : 'mt-3'}`}>
-      {
-        post.data.categories
-          .sort()
-          .map((category) => (
-            <span class='inline-block rounded-lg bg-brand-accent-cyan px-2 py-1 font-semibold text-brand-bg-dark'>
-              {category}
-            </span>
-          ))
-      }
+      {post.data.categories.sort().map((category) => <Tag>{category}</Tag>)}
     </div>
     <time
       datetime={post.data.date.toString()}
@@ -47,9 +40,9 @@ const { Content } = await post.render();
     >
       {formatDate(post.data.date)}
     </time>
-    <hr class='mb-4 opacity-20' />
+    <hr class='mb-4 opacity-30' />
     <section
-      class='prose prose-invert max-w-4xl md:prose-xl prose-a:text-brand-accent-pink sm:prose-img:mx-auto sm:prose-img:w-[75%] sm:prose-img:transition-all sm:prose-img:duration-1000 hover:sm:prose-img:w-full'
+      class='prose-a:text-primary prose prose-invert max-w-4xl md:prose-xl sm:prose-img:mx-auto sm:prose-img:w-[75%] sm:prose-img:transition-all sm:prose-img:duration-1000 hover:sm:prose-img:w-full'
     >
       <Content />
     </section>

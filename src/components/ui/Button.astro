@@ -1,0 +1,21 @@
+---
+type Props = {
+  path: string;
+  abs?: boolean;
+  secondary?: boolean;
+};
+const { path, abs, secondary } = Astro.props;
+---
+
+<a
+  href={path}
+  class={`inline-block rounded-lg px-5 py-3 text-lg font-semibold active:scale-95 focus:outline-none focus-visible:outline-4 focus-visible:outline-offset-2 ${
+    abs ? 'md:absolute md:right-0 md:top-0 md:mt-0' : ''
+  } ${
+    secondary
+      ? 'bg-accent hover:bg-accent/70 text-background focus-visible:outline-accent'
+      : 'bg-primary hover:bg-primary/70 text-black focus-visible:outline-primary'
+  }`}
+>
+  <slot />
+</a>
