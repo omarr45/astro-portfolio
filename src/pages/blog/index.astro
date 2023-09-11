@@ -1,6 +1,6 @@
 ---
 import BlogCard from '../../components/BlogCard.astro';
-import MainLayout from '../../layouts/MainLayout.astro';
+import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 const blogPosts = await getCollection('blog', ({ data }) => {
   return !data.draft && new Date(data.date) < new Date();
@@ -10,7 +10,7 @@ blogPosts.sort((a, b) => {
 });
 ---
 
-<MainLayout title='Blog | Omar45'>
+<Layout title='Blog | Omar45'>
   <section class='w-full'>
     <h2 class='text-3xl font-semibold sm:text-4xl md:mb-5 md:text-5xl'>
       All Blog Posts ({blogPosts.length})
@@ -20,4 +20,4 @@ blogPosts.sort((a, b) => {
       {blogPosts.map((post) => <BlogCard data={post.data} slug={post.slug} />)}
     </ul>
   </section>
-</MainLayout>
+</Layout>

@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon';
-import MainLayout from '../../layouts/MainLayout.astro';
+import Layout from '../../layouts/Layout.astro';
 import { getCollection, CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -30,7 +30,7 @@ const { project: project } = Astro.props;
 const { Content } = await project.render();
 ---
 
-<MainLayout title={`${project.data.title} | Omar45`}>
+<Layout title={`${project.data.title} | Omar45`}>
   <article
     class='m-auto my-2 w-full max-w-4xl rounded-2xl bg-brand-bg-dark p-6 sm:p-10 sm:text-left'
   >
@@ -67,9 +67,7 @@ const { Content } = await project.render();
     </div>
 
     <hr class='my-4 opacity-20' />
-    <div
-      class='flex flex-wrap items-start justify-start gap-2'
-    >
+    <div class='flex flex-wrap items-start justify-start gap-2'>
       {
         project.data.technologies.map((technology, idx) => (
           <span
@@ -88,7 +86,7 @@ const { Content } = await project.render();
       <Content />
     </section>
   </article>
-</MainLayout>
+</Layout>
 
 <script>
   // get all svgs inside article

@@ -1,7 +1,7 @@
 ---
 import ProjectCard from '../components/ProjectCard.astro';
 import { Icon } from 'astro-icon';
-import MainLayout from '../layouts/MainLayout.astro';
+import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import BlogCard from '../components/BlogCard.astro';
 
@@ -20,7 +20,7 @@ projects.sort((a, b) => {
 });
 ---
 
-<MainLayout title='Omar45'>
+<Layout title='Omar45'>
   <section
     class='flex min-h-[calc(100vh-12rem)] flex-col items-center justify-center gap-4 p-4 text-center sm:min-h-[calc(100vh-6rem)]'
   >
@@ -165,4 +165,4 @@ projects.sort((a, b) => {
       />
     </ul>
   </section>
-</MainLayout>
+</Layout>

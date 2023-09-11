@@ -1,5 +1,5 @@
 ---
-import MainLayout from '../../layouts/MainLayout.astro';
+import Layout from '../../layouts/Layout.astro';
 import { getCollection, CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -20,7 +20,7 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 ---
 
-<MainLayout title={`${post.data.title} | Omar45`}>
+<Layout title={`${post.data.title} | Omar45`}>
   <article
     class='m-auto my-2 w-full max-w-4xl rounded-2xl bg-brand-bg-dark p-6 sm:p-10'
     dir={post.data.isArabic ? 'rtl' : 'ltr'}
@@ -54,7 +54,7 @@ const { Content } = await post.render();
       <Content />
     </section>
   </article>
-</MainLayout>
+</Layout>
 
 <script>
   // const pTags = document.querySelectorAll('p');
