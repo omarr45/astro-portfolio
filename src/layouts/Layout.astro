@@ -1,7 +1,11 @@
 ---
 import Footer from '../components/Footer.astro';
 import Navbar from '../components/Navbar.astro';
-const { title, description } = Astro.props;
+const {
+  title = 'Omar45',
+  description = "I'm Omar, a Front-End Developer based in Egypt. I thrive on taking up challenging projects and experimenting with new technology stacks.",
+  imgLink = 'https://res.cloudinary.com/omar45/image/upload/c_scale,w_600/v1694467090/projects/omar45_twarh7.jpg',
+} = Astro.props;
 ---
 
 <html lang='en'>
@@ -23,20 +27,14 @@ const { title, description } = Astro.props;
     <meta property='og:url' content='https://omar45.vercel.app/' />
     <meta property='og:title' content={title} />
     <meta property='og:description' content={description} />
-    <meta
-      property='og:image'
-      content='https://res.cloudinary.com/omar45/image/upload/v1691977024/projects/omar45_lpnxnm.png'
-    />
+    <meta property='og:image' content={imgLink} />
 
     <!-- Twitter -->
     <meta property='twitter:card' content='summary_large_image' />
     <meta property='twitter:url' content='https://omar45.vercel.app/' />
     <meta property='twitter:title' content={title} />
     <meta property='twitter:description' content={description} />
-    <meta
-      property='twitter:image'
-      content='https://res.cloudinary.com/omar45/image/upload/v1691977024/projects/omar45_lpnxnm.png'
-    />
+    <meta property='twitter:image' content={imgLink} />
 
     <!-- Vercel Analytics -->
     <script>
@@ -49,7 +47,7 @@ const { title, description } = Astro.props;
     <script defer src='/_vercel/insights/script.js'></script>
   </head>
 
-  <body class='bg-background text-foreground grid grid-rows-[auto_1fr_auto]'>
+  <body class='grid grid-rows-[auto_1fr_auto] bg-background text-foreground'>
     <Navbar />
     <main
       class='mx-auto grid w-full max-w-4xl place-items-center gap-16 p-4 md:gap-28'
