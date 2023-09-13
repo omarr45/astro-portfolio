@@ -15,10 +15,40 @@ export const { getStaticPaths, GET } = OGImageRoute({
       title: data.title,
       description: data.date,
       dir: data.isArabic ? "rtl" : "ltr",
-      border: { color: [255, 93, 1], width: 20, side: "inline-start" },
+      border: { color: [114, 221, 64], width: 20, side: "inline-start" },
       bgGradient: [
-        [42, 35, 62],
-        [23, 20, 36],
+        [6, 38, 45],
+        [8, 3, 2],
+      ],
+      font: {
+        title: {
+          size: 78,
+          families: [
+            "Zilla Slab",
+            "Work Sans",
+            "Noto Sans Black",
+            "Noto Sans Arabic",
+          ],
+          weight: "ExtraBold",
+        },
+        description: {
+          size: 45,
+          lineHeight: 1.25,
+          families: [
+            "Zilla Slab",
+            "Work Sans",
+            "Noto Sans",
+            "Noto Sans Arabic",
+          ],
+          weight: "Normal",
+        },
+      },
+      fonts: [
+        "https://github.com/withastro/docs/raw/temp-fonts-cdn/src/pages/open-graph/_fonts/work-sans/latin-400-normal.ttf",
+        "https://github.com/withastro/docs/raw/temp-fonts-cdn/src/pages/open-graph/_fonts/work-sans/latin-800-normal.ttf",
+
+        "https://github.com/withastro/docs/raw/temp-fonts-cdn/src/pages/open-graph/_fonts/noto-sans/arabic-400-normal.ttf",
+        "https://github.com/withastro/docs/raw/temp-fonts-cdn/src/pages/open-graph/_fonts/noto-sans/arabic-800-normal.ttf",
       ],
     };
   },
