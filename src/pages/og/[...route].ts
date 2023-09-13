@@ -35,11 +35,11 @@ export const { getStaticPaths, GET } = OGImageRoute({
         },
       },
       fonts: [
-        "https://github.com/withastro/docs/raw/temp-fonts-cdn/src/pages/open-graph/_fonts/work-sans/latin-400-normal.ttf",
-        "https://github.com/withastro/docs/raw/temp-fonts-cdn/src/pages/open-graph/_fonts/work-sans/latin-800-normal.ttf",
+        "https://github.com/omarr45/astro-portfolio/raw/master/public/fonts/ZillaSlab-Medium.ttf",
+        "https://github.com/omarr45/astro-portfolio/raw/master/public/fonts/ZillaSlab-Bold.ttf",
 
-        "https://github.com/withastro/docs/raw/temp-fonts-cdn/src/pages/open-graph/_fonts/noto-sans/arabic-400-normal.ttf",
-        "https://github.com/withastro/docs/raw/temp-fonts-cdn/src/pages/open-graph/_fonts/noto-sans/arabic-800-normal.ttf",
+        "https://github.com/omarr45/astro-portfolio/raw/master/public/fonts/IBMPlexSansArabic-Medium.ttf",
+        "https://github.com/omarr45/astro-portfolio/raw/master/public/fonts/IBMPlexSansArabic-Bold.ttf",
       ],
     };
   },
