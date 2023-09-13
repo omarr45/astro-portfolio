@@ -17,7 +17,7 @@ const links = [
 ];
 ---
 
-<nav class='border-b-foreground/10 relative z-40 border-0 border-b-2 py-3'>
+<nav class='relative z-40 border-0 border-b-2 border-b-foreground/10 py-3'>
   <div
     id='wrapper'
     class='mx-auto flex max-w-4xl flex-wrap items-center justify-between gap-3 px-4 font-semibold'
@@ -26,13 +26,13 @@ const links = [
       title='Omar AbdulRahman'
       id='logo'
       href='/'
-      class='focus-visible:text-accent focus-visible:outline-accent hover:text-accent flex items-center justify-center gap-3 px-2 text-4xl font-bold focus:outline-none focus-visible:outline-dashed'
+      class='px-2 text-4xl font-bold hover:text-accent focus:outline-none focus-visible:text-accent focus-visible:outline-dashed focus-visible:outline-accent'
     >
-      Omar
+      Omar<span class='hidden md:inline'> AbdulRahman</span>
     </a>
     <button
       id='theme-toggle'
-      class='hover:text-accent focus-within:text-accent focus-within:outline-accent focus-visible:outline-accent ml-auto focus:outline-none focus-visible:outline-dashed'
+      class='ml-auto focus-within:text-accent focus-within:outline-accent hover:text-accent focus:outline-none focus-visible:outline-dashed focus-visible:outline-accent'
       title='Theme toggle'
     >
       <Icon name='icon-park-outline:dark-mode' class='inline h-6 w-6' />
@@ -48,7 +48,7 @@ const links = [
           <li class='hover:text-accent focus:outline-none'>
             <a
               href={url}
-              class='focus-visible:text-accent focus-visible:outline-accent px-2 py-1 focus:outline-none focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-2'
+              class='px-2 py-1 focus:outline-none focus-visible:text-accent focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent'
             >
               {name}
             </a>
