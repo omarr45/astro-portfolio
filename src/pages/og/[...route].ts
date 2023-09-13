@@ -15,10 +15,6 @@ export const { getStaticPaths, GET } = OGImageRoute({
       title: data.title,
       description: data.date,
       dir: data.isArabic ? "rtl" : "ltr",
-      logo: {
-        path: "./src/docs-logo.png",
-        size: [400],
-      },
       border: { color: [255, 93, 1], width: 20, side: "inline-start" },
       bgGradient: [
         [42, 35, 62],
