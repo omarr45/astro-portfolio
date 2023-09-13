@@ -23,24 +23,15 @@ export const { getStaticPaths, GET } = OGImageRoute({
       font: {
         title: {
           size: 78,
-          families: [
-            "Zilla Slab",
-            "Work Sans",
-            "Noto Sans Black",
-            "Noto Sans Arabic",
-          ],
-          weight: "ExtraBold",
+          lineHeight: 1.25,
+          families: ["Zilla Slab", "IBM Plex Sans Arabic"],
+          weight: "Bold",
         },
         description: {
-          size: 45,
+          size: 30,
           lineHeight: 1.25,
-          families: [
-            "Zilla Slab",
-            "Work Sans",
-            "Noto Sans",
-            "Noto Sans Arabic",
-          ],
-          weight: "Normal",
+          families: ["Zilla Slab", "IBM Plex Sans Arabic"],
+          weight: "Medium",
         },
       },
       fonts: [
