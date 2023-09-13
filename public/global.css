@@ -30,6 +30,18 @@
   --color-primary: 101deg 70% 56%;
   --color-secondary: 191deg 69% 86%;
   --color-accent: 191deg 76% 21%;
+
+  --astro-code-color-text: #24292f;
+  --astro-code-color-background: #fefbfb;
+  --astro-code-token-constant: #0550ae;
+  --astro-code-token-string: #24292f;
+  --astro-code-token-comment: #6e7781;
+  --astro-code-token-keyword: #cf222e;
+  --astro-code-token-parameter: #24292f;
+  --astro-code-token-function: #8250df;
+  --astro-code-token-string-expression: #48aa1b;
+  --astro-code-token-punctuation: #24292f;
+  --astro-code-token-link: #000012;
 }
 
 #blurry {
@@ -66,6 +78,18 @@
   --color-primary: 101deg 70% 56%;
   --color-secondary: 191deg 69% 6%;
   --color-accent: 191deg 76% 51%;
+
+  --astro-code-color-text: #c9d1d9;
+  --astro-code-color-background: hsl(var(--color-foreground) / 0.1);
+  --astro-code-token-constant: #79c0ff;
+  --astro-code-token-string: #a5d6ff;
+  --astro-code-token-comment: #8b949e;
+  --astro-code-token-keyword: #ff7b72;
+  --astro-code-token-parameter: #c9d1d9;
+  --astro-code-token-function: #d2a8ff;
+  --astro-code-token-string-expression: #a5d6ff;
+  --astro-code-token-punctuation: #c9d1d9;
+  --astro-code-token-link: #000012;
 
   .slick-prev:before,
   .slick-next:before,

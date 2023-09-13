@@ -1,6 +1,6 @@
-import { component, defineMarkdocConfig } from '@astrojs/markdoc/config';
+import { component, defineMarkdocConfig } from "@astrojs/markdoc/config";
 
-import shiki from '@astrojs/markdoc/shiki';
+import shiki from "@astrojs/markdoc/shiki";
 
 export default defineMarkdocConfig({
   extends: [
@@ -8,7 +8,7 @@ export default defineMarkdocConfig({
       // Choose from Shiki's built-in themes (or add your own)
       // Default: 'github-dark'
       // https://github.com/shikijs/shiki/blob/main/docs/themes.md
-      theme: 'dracula',
+      theme: "css-variables",
       // Enable word wrap to prevent horizontal scrolling
       // Default: false
       wrap: true,
@@ -20,15 +20,15 @@ export default defineMarkdocConfig({
   ],
   tags: {
     imageSlider: {
-      render: component('./src/components/ImageSliderWrapper.astro'),
+      render: component("./src/components/ImageSliderWrapper.astro"),
       attributes: {
         // Markdoc requires type defs for each attribute.
         // These should mirror the `Props` type of the component
         // you are rendering.
         // See Markdoc's documentation on defining attributes
         // https://markdoc.dev/docs/attributes#defining-attributes
-        imgs: { type: 'Array' },
+        imgs: { type: "Array" },
       },
-    }
-  }
+    },
+  },
 });
