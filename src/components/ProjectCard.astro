@@ -8,7 +8,7 @@ const { data, slug } = Astro.props;
 
 {
   data ? (
-    <li class='bg-foreground/5 flex flex-col items-start justify-start gap-4 rounded-2xl p-3 text-center md:flex-row md:text-left'>
+    <li class='flex flex-col items-start justify-start gap-4 rounded-2xl bg-foreground/5 p-3 text-center md:flex-row md:text-left'>
       <Image
         src={data.image}
         alt={data.title}
@@ -30,7 +30,7 @@ const { data, slug } = Astro.props;
       </div>
     </li>
   ) : (
-    <li class='bg-foreground/5 hover:text-accent focus-within:text-accent focus-within:outline-accent rounded-2xl p-4 outline outline-transparent transition-colors focus-within:outline-4'>
+    <li class='rounded-2xl bg-foreground/5 p-4 outline outline-transparent transition-colors focus-within:text-accent focus-within:outline-4 focus-within:outline-accent hover:text-accent'>
       <a
         href='/projects/'
         class='flex items-center justify-between font-medium focus:outline-none'

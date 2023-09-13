@@ -5,7 +5,7 @@ const { data, slug } = Astro.props;
 ---
 
 <li
-  class='bg-foreground/5 focus-within:text-accent hover:text-accent focus-within:outline-accent rounded-2xl p-4 outline outline-transparent transition-colors focus-within:outline-4'
+  class='rounded-2xl bg-foreground/5 p-4 outline outline-transparent transition-colors focus-within:text-accent focus-within:outline-4 focus-within:outline-accent hover:text-accent'
 >
   <a
     href={data ? `/blog/${slug}` : '/blog/'}
@@ -28,6 +28,6 @@ const { data, slug } = Astro.props;
         </div>
       )
     }
-    <Icon name='bi:caret-right' class='text-primary mt-2' size={25} />
+    <Icon name='bi:caret-right' class='mt-2 text-primary' size={25} />
   </a>
 </li>

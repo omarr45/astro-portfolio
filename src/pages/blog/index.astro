@@ -16,7 +16,7 @@ blogPosts.sort((a, b) => {
       All Blog Posts ({blogPosts.length})
     </h2>
 
-    <ul class='mt-4 grid grid-cols-1 gap-2 md:grid-cols-2'>
+    <ul class='mt-4 grid grid-cols-1 gap-2'>
       {blogPosts.map((post) => <BlogCard data={post.data} slug={post.slug} />)}
     </ul>
   </section>
