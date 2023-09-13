@@ -22,6 +22,10 @@ export const { getStaticPaths, GET } = OGImageRoute({
         [6, 38, 45],
         [8, 3, 2],
       ],
+      logo: {
+        path: "./src/logo.png",
+        size: [500],
+      },
       font: {
         title: {
           size: 80,
