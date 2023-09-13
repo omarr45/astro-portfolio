@@ -41,7 +41,7 @@ const links = [
 ];
 ---
 
-<footer class='border-t-foreground/10 border-0 border-t-2'>
+<footer class='border-0 border-t-2 border-t-foreground/10'>
   <div
     class='mx-auto flex w-full max-w-4xl flex-col items-center justify-between gap-4 p-4 text-center md:flex-row'
   >
@@ -57,7 +57,7 @@ const links = [
         links.map(({ title, href, label, icon }) => (
           <li
             title={title}
-            class='focus-within:text-accent hover:text-accent focus-within:outline-accent focus-within:outline-dashed focus-within:outline-2 focus-within:outline-offset-2 focus:outline-none'
+            class='focus-within:text-accent focus-within:outline-dashed focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-accent hover:text-accent focus:outline-none'
           >
             <a
               href={href}
@@ -65,7 +65,11 @@ const links = [
               target={title === 'Mail' ? '_self' : '_blank'}
               aria-label={label}
             >
-              <Icon name={icon} size={24} class='focus:outline-none' />
+              <Icon
+                name={icon}
+                size={title === 'RSS Feed' ? 20 : 24}
+                class='focus:outline-none'
+              />
             </a>
           </li>
         ))
