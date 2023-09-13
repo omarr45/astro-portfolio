@@ -1,10 +1,11 @@
 import { OGImageRoute } from "astro-og-canvas";
 import { getCollection } from "astro:content";
 
-const paths = await getCollection("blog");
+const blogs = await getCollection("blog");
+const projects = await getCollection("projects");
 
 const pages = Object.fromEntries(
-  paths.map(({ id, slug, data }) => [id, { data, slug }]),
+  [...blogs, ...projects].map(({ id, slug, data }) => [id, { data, slug }]),
 );
 
 export const { getStaticPaths, GET } = OGImageRoute({
@@ -13,7 +14,8 @@ export const { getStaticPaths, GET } = OGImageRoute({
   getImageOptions: async (_, { data }: (typeof pages)[string]) => {
     return {
       title: data.title,
-      description: data.date,
+      description: data.description,
+      //@ts-ignore
       dir: data.isArabic ? "rtl" : "ltr",
       border: { color: [114, 221, 64], width: 20, side: "inline-start" },
       bgGradient: [
@@ -22,13 +24,13 @@ export const { getStaticPaths, GET } = OGImageRoute({
       ],
       font: {
         title: {
-          size: 78,
+          size: 80,
           lineHeight: 1.25,
           families: ["Zilla Slab", "IBM Plex Sans Arabic"],
           weight: "Bold",
         },
         description: {
-          size: 30,
+          size: 40,
           lineHeight: 1.25,
           families: ["Zilla Slab", "IBM Plex Sans Arabic"],
           weight: "Medium",
