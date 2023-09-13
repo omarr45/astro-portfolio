@@ -41,6 +41,12 @@ dependencies:
   astro-icon:
     specifier: ^0.8.1
     version: 0.8.1
+  astro-og-canvas:
+    specifier: ^0.2.1
+    version: 0.2.1(astro@3.0.12)
+  canvaskit-wasm:
+    specifier: ^0.38.2
+    version: 0.38.2
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -3018,6 +3024,17 @@ packages:
       svgo: 2.8.0
     dev: false
 
+  /astro-og-canvas@0.2.1(astro@3.0.12):
+    resolution: {integrity: sha512-FuUKUXOt9ZXSgjcjyy7+GHJHx7z9csHne6MTogBJ8oGvxG2mMBUsBCdO5xvBtM+TwNnT4tMpGe1rCph2BLsR5Q==}
+    engines: {node: '>=18.14.1'}
+    peerDependencies:
+      astro: ^3.0.0
+    dependencies:
+      astro: 3.0.12(sass@1.64.2)
+      canvaskit-wasm: 0.37.2
+      entities: 4.5.0
+    dev: false
+
   /astro@3.0.12(sass@1.64.2):
     resolution: {integrity: sha512-nDLI9OGEjYIX90a1Md1orqyurPxqXTWTy7Sm3ZsWl5dpzSjcUXo3VB/GTvNjAMS9sE40BOxhay7/hnnQuI8p7A==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
@@ -3248,6 +3265,14 @@ packages:
 
   /caniuse-lite@1.0.30001523:
     resolution: {integrity: sha512-I5q5cisATTPZ1mc588Z//pj/Ox80ERYDfR71YnvY7raS/NOk8xXlZcB0sF7JdqaV//kOaa6aus7lRfpdnt1eBA==}
+    dev: false
+
+  /canvaskit-wasm@0.37.2:
+    resolution: {integrity: sha512-212imazRF98gLOTiU4JAXM7xDvaknI7jaPtAg4ETXGW5rLQs6pomgIvVPUSfoKnQVTdGgzj+B4e+/u0Da20aGg==}
+    dev: false
+
+  /canvaskit-wasm@0.38.2:
+    resolution: {integrity: sha512-ieRb6DO4yL91qUfyRgmyhp2Hi1KmQ9lIMfKacxHVlfp/CpKCkzgAxRGUbCsJFzwLKjs9fufGrIyvnzEYRwm1XQ==}
     dev: false
 
   /ccount@1.1.0:

@@ -19,11 +19,13 @@ type Props = {
 
 const { project: project } = Astro.props;
 const { Content } = await project.render();
+
+const imgLink = `${Astro.site.origin}/og/${project.slug}.png`;
 ---
 
-<Layout title={`${project.data.title} | Omar45`}>
+<Layout title={`${project.data.title} | Omar45`} imgLink={imgLink}>
   <article
-    class='bg-foreground/5 m-auto my-2 w-full max-w-4xl rounded-2xl p-6 sm:p-10 sm:text-left'
+    class='m-auto my-2 w-full max-w-4xl rounded-2xl bg-foreground/5 p-6 sm:p-10 sm:text-left'
   >
     <div class='flex flex-row items-center justify-center gap-2'>
       <h1 class='text-4xl font-bold md:text-5xl'>
@@ -35,8 +37,8 @@ const { Content } = await project.render();
             title='Github Link'
             target='_blank'
             href={project.data.links?.github}
-            class='bg-accent text-background focus-visible:outline-accent ml-auto rounded-full p-1 focus:outline-none 
-            focus-visible:outline-2 focus-visible:outline-offset-4 active:scale-90 sm:p-1.5'
+            class='ml-auto rounded-full bg-accent p-1 text-background focus:outline-none focus-visible:outline-2 
+            focus-visible:outline-offset-4 focus-visible:outline-accent active:scale-90 sm:p-1.5'
           >
             <Icon name='simple-icons:github' size={26} />
           </a>
@@ -50,7 +52,7 @@ const { Content } = await project.render();
             href={project.data.links?.live}
             class={`${
               project.data.links.github ? '' : 'ml-auto'
-            } bg-primary focus-visible:outline-primary rounded-full p-1 text-black focus:outline-none focus-visible:outline-2  focus-visible:outline-offset-4 active:scale-90 sm:p-1.5`}
+            } rounded-full bg-primary p-1 text-black focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4  focus-visible:outline-primary active:scale-90 sm:p-1.5`}
           >
             <Icon name='mdi:launch' size={26} />
           </a>
@@ -67,7 +69,7 @@ const { Content } = await project.render();
       }
     </div>
     <section
-      class='marker:text-accent prose-a:text-primary prose prose-invert max-w-4xl md:prose-xl sm:prose-img:mx-auto sm:prose-img:w-[75%] sm:prose-img:transition-all sm:prose-img:duration-1000 hover:sm:prose-img:w-full'
+      class='prose prose-invert max-w-4xl md:prose-xl marker:text-accent prose-a:text-primary sm:prose-img:mx-auto sm:prose-img:w-[75%] sm:prose-img:transition-all sm:prose-img:duration-1000 hover:sm:prose-img:w-full'
     >
       <Content />
     </section>

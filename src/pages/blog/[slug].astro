@@ -19,11 +19,13 @@ type Props = {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
+
+const imgLink = `${Astro.site.origin}/og/${post.slug}.png`;
 ---
 
-<Layout title={`${post.data.title} | Omar45`}>
+<Layout title={`${post.data.title} | Omar45`} imgLink={imgLink}>
   <article
-    class='bg-foreground/5 m-auto my-2 w-full max-w-4xl rounded-2xl p-6 sm:p-10'
+    class='m-auto my-2 w-full max-w-4xl rounded-2xl bg-foreground/5 p-6 sm:p-10'
     dir={post.data.isArabic ? 'rtl' : 'ltr'}
   >
     <h1 class='text-3xl font-bold sm:text-4xl md:text-5xl'>
@@ -42,7 +44,7 @@ const { Content } = await post.render();
     </time>
     <hr class='mb-4 opacity-30' />
     <section
-      class='prose-a:text-primary prose prose-invert max-w-4xl md:prose-xl sm:prose-img:mx-auto sm:prose-img:w-[75%] sm:prose-img:transition-all sm:prose-img:duration-1000 hover:sm:prose-img:w-full'
+      class='prose prose-invert max-w-4xl md:prose-xl prose-a:text-primary sm:prose-img:mx-auto sm:prose-img:w-[75%] sm:prose-img:transition-all sm:prose-img:duration-1000 hover:sm:prose-img:w-full'
     >
       <Content />
     </section>
