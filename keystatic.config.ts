@@ -16,6 +16,7 @@ export default config({
       format: { contentField: "content" },
       schema: {
         title: fields.slug({ name: { label: "Title" } }),
+        description: fields.text({ label: "Description" }),
         date: fields.date({ label: "Date" }),
         draft: fields.checkbox({ label: "Draft" }),
         isArabic: fields.checkbox({ label: "Is Arabic" }),
