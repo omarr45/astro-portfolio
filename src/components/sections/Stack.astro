@@ -10,7 +10,7 @@ const { data: stack } = await getEntry('stack', 'tech-stack');
   <ul class='grid grid-cols-3 gap-4 md:grid-cols-6'>
     {
       stack.map((i) => (
-        <li class='bg-foreground/5 rounded-xl p-5 transition-transform md:hover:scale-110'>
+        <li class='rounded-xl bg-foreground/5 p-5 transition-transform md:hover:scale-110'>
           <Icon
             name={i.icon}
             title={i.title}
