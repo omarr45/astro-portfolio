@@ -39,6 +39,8 @@ const projects = defineCollection({
           "Open Source",
           "Dark Mode",
           "Design System",
+          "Extension",
+          "VS Code",
         ]),
       ),
       links: z.object({
