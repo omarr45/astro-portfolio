@@ -11,7 +11,7 @@ const { data, slug } = Astro.props;
     <li class='flex flex-col items-start justify-start gap-4 rounded-2xl bg-foreground/5 p-3 text-center md:flex-row md:text-left'>
       <Image
         src={data.image}
-        alt={data.title}
+        alt={`A screenshot from the website: ${data.title}`}
         width={600}
         height={400}
         class='aspect-[3/2] h-full w-full rounded-lg object-cover sm:max-h-48 sm:w-auto'

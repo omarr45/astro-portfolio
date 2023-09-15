@@ -2,14 +2,13 @@
 import Icon from 'astro-icon';
 ---
 
-<!-- class='relative isolate mt-8 grid w-full grid-cols-1 gap-4 md:mt-16 md:scale-110 md:grid-cols-2' -->
 <section
   class='flex flex-col items-center justify-center gap-2 overflow-hidden py-[5.5rem] text-center'
 >
   <div
     aria-hidden='true'
     id='blurry'
-    class='blurry-1 text-primary/40 absolute left-0 top-40 -z-20 h-full max-h-[600px] w-full max-w-[600px] blur-3xl md:left-80 md:top-0'
+    class='blurry-1 absolute left-0 top-40 -z-20 h-full max-h-[600px] w-full max-w-[600px] text-primary/40 blur-3xl md:left-80 md:top-0'
   >
     <svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'>
       <path
@@ -21,7 +20,7 @@ import Icon from 'astro-icon';
   <div
     aria-hidden='true'
     id='blurry'
-    class='blurry-2 text-accent/40 absolute right-10 top-36 -z-20 h-full max-h-[600px] w-full max-w-[600px] blur-3xl md:right-80 md:top-0'
+    class='blurry-2 absolute right-10 top-36 -z-20 h-full max-h-[600px] w-full max-w-[600px] text-accent/40 blur-3xl md:right-80 md:top-0'
   >
     <svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'>
       <path
@@ -38,49 +37,17 @@ import Icon from 'astro-icon';
   />
   <h1 class='mt-8 text-[3.5rem] font-extrabold sm:text-7xl md:text-[9.5rem]'>
     Hi! I'm <span
-      class='from-primary to-accent bg-gradient-to-r bg-clip-text text-transparent'
+      class='bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent'
       >Omar</span
     >
+    <span class='mt-2 block text-2xl font-medium sm:text-3xl md:text-5xl'>
+      a front-end developer
+    </span>
   </h1>
-  <h2 class='text-2xl font-medium sm:text-3xl md:text-5xl'>
-    a front-end developer
-  </h2>
   <Icon
-    class='text-accent mt-16 animate-[bounce_1.5s_ease-in-out_infinite]'
+    class='mt-16 animate-[bounce_1.5s_ease-in-out_infinite] text-accent'
     name='iconoir:mouse-scroll-wheel'
     aria-label='Scroll Down Icon'
     size={40}
   />
-  <!-- <div class='relative w-full overflow-y-hidden'>
-    <div
-      class='bg-foreground absolute bottom-24 left-1/2 -z-10 aspect-square w-10/12 max-w-lg -translate-x-1/2 translate-y-1/2 rounded-full'
-    >
-    </div>
-    <div
-      class='border-accent absolute bottom-24 left-1/2 -z-10 aspect-square w-11/12 max-w-xl -translate-x-1/2 translate-y-1/2 rounded-full border-4'
-    >
-    </div>
-    <Image
-      src={heroImg}
-      alt='hero'
-      class='mx-auto w-full max-w-lg'
-      loading='eager'
-    />
-  </div> -->
-  <!-- <div
-    class='flex flex-col items-center justify-center gap-2 text-center md:items-start'
-  >
-    <p class='text-foreground/70 text-lg capitalize md:text-xl'>
-      Front-end web developer
-    </p>
-    <h1 class='text-foreground text-5xl font-bold md:text-7xl'>
-      Omar AbdulRahman
-    </h1>
-
-    <button
-      onclick="window.open('/cv.pdf')"
-      class='bg-accent ring-offset-background focus-within:ring-accent mt-8 rounded-xl px-4 py-3 text-xl font-semibold text-white ring-opacity-50 ring-offset-4 focus-within:ring-4 focus:outline-none active:scale-95'
-      >Download CV</button
-    >
-  </div> -->
 </section>
