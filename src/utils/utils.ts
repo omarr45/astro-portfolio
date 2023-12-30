@@ -1,5 +1,5 @@
-const formatDate = (d: Date|string) => {
-  return new Date(d).toLocaleDateString("en-GB", {
+const formatDate = (d: Date | string, locale: "en-GB" | "ar") => {
+  return new Date(d).toLocaleDateString(locale, {
     day: "numeric",
     month: "short",
     year: "numeric",

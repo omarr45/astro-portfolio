@@ -180,7 +180,7 @@ select {
 
 ::selection {
   background-color: hsl(var(--color-primary));
-  color: hsl(var(--color-foreground));
+  color: black;
 }
 
 .image-slider {
@@ -194,4 +194,15 @@ select {
 .image-slider img {
   max-width: 90vw;
   margin: 0 auto;
+}
+
+.image-wrapper img {
+  width: 100% !important;
+  aspect-ratio: 2 / 3;
+  object-fit: fit;
+}
+
+.prose td + td,
+.prose th + th {
+  border-right: 1px solid hsl(var(--color-foreground) / 0.5);
 }

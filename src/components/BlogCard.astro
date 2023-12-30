@@ -5,7 +5,7 @@ const { data, slug } = Astro.props;
 ---
 
 <li
-  class='rounded-2xl bg-foreground/5 p-4 outline outline-transparent transition-colors focus-within:text-accent focus-within:outline-4 focus-within:outline-accent hover:text-accent'
+  class='group rounded-2xl bg-foreground/5 p-4 outline outline-transparent transition-colors focus-within:text-accent focus-within:outline-4 focus-within:outline-accent hover:text-accent'
 >
   <a
     href={data ? `/blog/${slug}` : '/blog/'}
@@ -14,7 +14,12 @@ const { data, slug } = Astro.props;
     {
       data ? (
         <div class='space-y-2'>
-          <h3 class='text-2xl font-semibold md:text-3xl'>{data.title}</h3>
+          <h3
+            class='text-2xl font-semibold md:text-3xl'
+            dir={data.isArabic ? 'rtl' : 'ltr'}
+          >
+            {data.title}
+          </h3>
           <div class='flex flex-wrap gap-2'>
             {data.categories.sort().map((category: String) => (
               <Tag>{category}</Tag>
@@ -28,6 +33,10 @@ const { data, slug } = Astro.props;
         </div>
       )
     }
-    <Icon name='bi:caret-right' class='mt-2 text-primary' size={25} />
+    <Icon
+      name='bi:caret-right'
+      class='mt-2 text-primary transition-transform group-hover:translate-x-2'
+      size={25}
+    />
   </a>
 </li>

@@ -13,7 +13,7 @@ blogPosts.sort((a, b) => {
 ---
 
 <section class='mb-8 w-full space-y-4'>
-  <Heading>Featured Blog Posts</Heading>
+  <Heading>Latest Blog Posts</Heading>
   <ul class='grid grid-cols-1 gap-2'>
     {blogPosts.slice(0, 3).map((blog) => <BlogCard {...blog} />)}
     <BlogCard />

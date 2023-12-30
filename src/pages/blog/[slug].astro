@@ -41,14 +41,15 @@ const imgLink = `${Astro.site.origin}/og/${post.slug}.png`;
     <time
       datetime={post.data.date.toString()}
       class={`block text-sm sm:text-lg md:text-xl ${
-        post.data.isArabic ? 'my-4' : 'mt-2 mb-4'
+        post.data.isArabic ? 'my-4 text-right' : 'mt-2 mb-4'
       }`}
+      dir='ltr'
     >
-      {formatDate(post.data.date)}
+      {formatDate(post.data.date, post.data.isArabic ? 'ar' : 'en-GB')}
     </time>
-    <hr class='mb-4 opacity-30' />
+    <hr class='mb-4 border-foreground/30' />
     <section
-      class='prose prose-invert max-w-4xl md:prose-xl prose-a:text-primary sm:prose-img:mx-auto sm:prose-img:w-[75%] sm:prose-img:transition-all sm:prose-img:duration-1000 hover:sm:prose-img:w-full'
+      class='prose prose-invert max-w-4xl md:prose-xl prose-a:text-primary prose-table:rounded-lg prose-table:bg-foreground/10 prose-thead:border-foreground/50 prose-tr:grid prose-tr:grid-cols-3 prose-th:p-2 prose-td:p-2 prose-hr:border-foreground/30 sm:prose-img:mx-auto sm:prose-img:w-[75%] sm:prose-img:transition-all sm:prose-img:duration-1000 hover:sm:prose-img:w-full'
     >
       <Content />
     </section>

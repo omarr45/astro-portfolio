@@ -30,5 +30,41 @@ export default defineMarkdocConfig({
         imgs: { type: "Array" },
       },
     },
+    img: {
+      render: component("./src/components/Image.astro"),
+      attributes: {
+        src: { type: "String" },
+        alt: { type: "String" },
+      },
+    },
+    bookCard: {
+      render: component("./src/components/BookCard.astro"),
+      attributes: {
+        title: { type: String },
+        author: { type: String },
+        publisher: { type: String },
+        nPages: { type: Number },
+        reviewId: { type: String },
+        myRating: {
+          type: String,
+          matches: [
+            "A+",
+            "A",
+            "A-",
+            "B+",
+            "B",
+            "B-",
+            "C+",
+            "C",
+            "C-",
+            "D+",
+            "D",
+            "D-",
+            "F",
+          ],
+        },
+        genres: { type: Array },
+      },
+    },
   },
 });
