@@ -13,19 +13,63 @@ import Layout from '../../layouts/Layout.astro';
     <hr class='my-4 opacity-30 md:my-5' />
 
     <h2 class='mb-2 text-3xl font-bold'>Work Experience</h2>
-    <ul>
+    <ul class='timeline'>
       <li>
-        <h3 class='text-xl font-bold'>Frontend Developer</h3>
-        <p class='text-lg'>Freelance</p>
-        <p class='italic opacity-60 sm:text-lg'>AUG 2021 - Present</p>
+        <h3 class='text-xl font-bold'>
+          Full-Stack Web Developer (Software Diploma)
+        </h3>
+        <p class='text-lg'>Siemens Digital Industries Software</p>
+        <p class='italic opacity-60 sm:text-lg'>SEP 2023 - Present</p>
         <p class='text-justify text-lg'>
-          I've embarked on a dynamic journey, collaborating with a diverse range
-          of clients to bring their digital visions to life. Through my
-          expertise in cutting-edge web technologies and a creative approach to
-          design, I've contributed to the success of several impactful projects.
-          From crafting immersive user interfaces to optimizing user
-          experiences, my work reflects a commitment to excellence and
-          innovation.
+          <ul class='normal'>
+            <li>
+              Gained comprehensive software development insights during the
+              intensive 3-month Diploma.
+            </li>
+            <li>
+              Acquired knowledge and practical experience in algorithms, data
+              structures, backend developmentusing Java Spring, and frontend
+              development with Angular.
+            </li>
+            <li>
+              Explored essential skills including Linux proficiency, version
+              control using GitHub, application of SOLIDprinciples, coding best
+              practices, and participation in code reviews.
+            </li>
+            <li>
+              Developed expertise in performance and optimization techniques,
+              understanding build systems, systemdesign, UX design principles,
+              software development lifecycle (SDLC), databases, and
+              microservices.
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <h3 class='text-xl font-bold'>Mentor - MERN Stack</h3>
+        <p class='text-lg'>
+          <a href='https://xcodify.org/'>X-Codify</a>
+        </p>
+        <p class='italic opacity-60 sm:text-lg'>NOV 2023 - Present</p>
+        <p class='text-justify text-lg'>
+          <ul class='normal'>
+            <li>
+              Trained students on the entire MERN (MongoDB, Express.js,
+              React.js, Node.js) stack.
+            </li>
+            <li>
+              Guided individuals through the intricacies of full-stack
+              development.
+            </li>
+            <li>
+              Enhanced communication skills in explaining complex concepts
+              effectively.
+            </li>
+            <li>
+              Solidified commitment to empowering aspiring developers with
+              practical skills.
+            </li>
+          </ul>
         </p>
       </li>
       <li>
@@ -35,17 +79,55 @@ import Layout from '../../layouts/Layout.astro';
         </p>
         <p class='italic opacity-60 sm:text-lg'>AUG 2022 - JAN 2023</p>
         <p class='text-justify text-lg'>
-          Developed and deployed several projects during a 3-month internship at
-          NEAR, resulting in recognition as the best member of a team of 6.
-          Continued as a part-time employee for another 3 months, developing 5
-          websites related to blockchains, smart contracts, NFTs, and database
-          dashboards.
+          <ul class='normal'>
+            <li>
+              Transformed concepts into reality during a 6-month tenure with
+              NEAR in Arabic.
+            </li>
+            <li>
+              Showcased expertise in blockchain, smart contracts, and developing
+              database dashboards.
+            </li>
+            <li>
+              Developed and deployed multiple projects, earning recognition as
+              the top performer in a team of 6.
+            </li>
+            <li>
+              Continued contributions as a part-time employee for an additional
+              3 months, delivering 5 websitesfocused on blockchain technology,
+              smart contracts, NFTs, and database dashboards.
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <h3 class='text-xl font-bold'>Frontend Developer</h3>
+        <p class='text-lg'>Freelance</p>
+        <p class='italic opacity-60 sm:text-lg'>AUG 2021 - Present</p>
+        <p class='text-justify text-lg'>
+          <ul class='normal'>
+            <li>
+              Engaged in diverse projects over the past two years, tailoring
+              solutions to meet clients' requirements.
+            </li>
+            <li>
+              Specialized in front-end development, creating user-friendly
+              websites for seamless user experiences.
+            </li>
+            <li>
+              Collaborated closely with clients, translating their visions into
+              effective digital solutions.
+            </li>
+             Strengthened versatility, adaptability, and problem-solving skills
+            within the dynamic field of web
+            <li>development.</li>
+          </ul>
         </p>
       </li>
     </ul>
 
     <h2 class='mb-2 mt-8 text-3xl font-bold'>Volunteering</h2>
-    <ul>
+    <ul class='timeline'>
       <li>
         <h3 class='text-xl font-bold'>Organizer / Photographer</h3>
         <p class='text-lg'>
@@ -100,7 +182,7 @@ import Layout from '../../layouts/Layout.astro';
     </ul>
 
     <h2 class='mb-2 mt-8 text-3xl font-bold'>Education</h2>
-    <ul>
+    <ul class='timeline'>
       <li>
         <h3 class='text-xl font-bold'>BSc. Computer Science</h3>
         <p class='text-lg'>Ain Shams University</p>
@@ -109,7 +191,7 @@ import Layout from '../../layouts/Layout.astro';
     </ul>
 
     <h2 class='mb-2 mt-8 text-3xl font-bold'>Skills</h2>
-    <ul class='list-disc columns-2 md:columns-3 md:text-lg'>
+    <ul class='skills list-disc columns-2 md:columns-3 md:text-lg'>
       <li>
         <p>HTML, CSS</p>
       </li>
@@ -151,18 +233,18 @@ import Layout from '../../layouts/Layout.astro';
 </Layout>
 
 <style lang='scss'>
-  ul {
-    &:where(.columns-2) {
-      li {
-        margin-left: 1rem;
+  .skills {
+    li {
+      margin-left: 1rem;
 
-        &::marker {
-          color: #23bee1;
-        }
+      &::marker {
+        color: #23bee1;
       }
     }
+  }
+  .timeline {
     &:not(.columns-2) {
-      li {
+      & > li {
         position: relative;
         padding-left: 1.5rem;
         margin-left: 0.5rem;
@@ -191,6 +273,12 @@ import Layout from '../../layouts/Layout.astro';
       }
     }
   }
+
+  .normal {
+    list-style: disc;
+    padding-left: 1rem;
+  }
+
   a[href^='http'] {
     position: relative;
     display: inline-block;
