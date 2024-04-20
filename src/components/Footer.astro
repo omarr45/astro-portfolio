@@ -8,12 +8,12 @@ const links = [
     icon: 'simple-icons:linkedin',
     label: 'LinkedIn Account',
   },
-  {
-    title: 'Buy Me a Coffee',
-    href: 'https://www.buymeacoffee.com/omar45/',
-    icon: 'simple-icons:buymeacoffee',
-    label: 'Buy Me a Coffee Account',
-  },
+  // {
+  //   title: 'Buy Me a Coffee',
+  //   href: 'https://www.buymeacoffee.com/omar45/',
+  //   icon: 'simple-icons:buymeacoffee',
+  //   label: 'Buy Me a Coffee Account',
+  // },
   {
     title: 'GitHub',
     href: 'https://www.github.com/omarr45/',
@@ -25,6 +25,12 @@ const links = [
     href: 'https://www.youtube.com/@Omar45/',
     icon: 'simple-icons:youtube',
     label: 'YouTube Channel',
+  },
+  {
+    title: 'Goodreads',
+    href: 'https://www.goodreads.com/omar45',
+    icon: 'simple-icons:goodreads',
+    label: 'Goodreads Account',
   },
   {
     title: 'Mail',
@@ -43,28 +49,24 @@ const links = [
 
 <footer class='border-0 border-t-2 border-t-foreground/10'>
   <div
-    class='mx-auto flex w-full max-w-4xl flex-col items-center justify-between gap-4 p-4 text-center md:flex-row'
-  >
+    class='mx-auto flex w-full max-w-4xl flex-col items-center justify-between gap-4 p-4 text-center md:flex-row'>
     <p>
       Copyright<span aria-hidden='true'>&nbsp;&copy;&nbsp;</span>
       <span id='year'></span> - Omar AbdulRahman
     </p>
     <ul
       class='flex items-center justify-center gap-4'
-      aria-label='Social Media Links'
-    >
+      aria-label='Social Media Links'>
       {
         links.map(({ title, href, label, icon }) => (
           <li
             title={title}
-            class='focus-within:text-accent focus-within:outline-dashed focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-accent hover:text-accent focus:outline-none'
-          >
+            class='focus-within:text-accent focus-within:outline-dashed focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-accent hover:text-accent focus:outline-none'>
             <a
               href={href}
               class='focus:outline-none'
               target={title === 'Mail' ? '_self' : '_blank'}
-              aria-label={label}
-            >
+              aria-label={label}>
               <Icon
                 name={icon}
                 size={title === 'RSS Feed' ? 20 : 24}
