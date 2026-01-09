@@ -8,7 +8,7 @@ const pages = Object.fromEntries(
   [...blogs, ...projects].map(({ id, slug, data }) => [id, { data, slug }]),
 );
 
-export const { getStaticPaths, GET } = OGImageRoute({
+export const { getStaticPaths, GET } = await OGImageRoute({
   param: "route",
   pages,
   getImageOptions: async (_, { data }: (typeof pages)[string]) => {
