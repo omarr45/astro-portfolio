@@ -1,13 +1,14 @@
 import { defineConfig } from "astro/config";
+import icon from "astro-icon";
 import markdoc from "@astrojs/markdoc";
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
-import vercel from "@astrojs/vercel/serverless";
+import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "hybrid",
-  integrations: [tailwind(), react(), markdoc({allowHTML:true})],
+  output: "static",
+  integrations: [tailwind(), react(), markdoc({ allowHTML: true }), icon()],
   markdown: {
     shikiConfig: {
       theme: "dracula",

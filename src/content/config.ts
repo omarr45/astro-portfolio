@@ -20,9 +20,10 @@ const projects = defineCollection({
       draft: z.boolean(),
       featured: z.boolean(),
       description: z.string(),
-      image: image().refine((img) => img.width >= 500, {
-        message: "Image width must be more than 500px",
-      }),
+      image: image(),
+      // .refine((img) => img.width >= 500, {
+      // message: "Image width must be more than 500px",
+      // })
       technologies: z.array(
         z.enum([
           "ReactJS",

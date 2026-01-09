@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-icon';
+import { Icon } from 'astro-icon/components';
 import Layout from '../../layouts/Layout.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Tag from '../../components/ui/Tag.astro';
@@ -26,11 +26,9 @@ const imgLink = `${Astro.site.origin}/og/${project.slug}.png`;
 <Layout
   title={`${project.data.title} | Omar45`}
   imgLink={imgLink}
-  description={project.data.description}
->
+  description={project.data.description}>
   <div
-    class='m-auto my-2 w-full max-w-4xl rounded-2xl bg-foreground/5 p-6 sm:p-10 sm:text-left'
-  >
+    class='m-auto my-2 w-full max-w-4xl rounded-2xl bg-foreground/5 p-6 sm:p-10 sm:text-left'>
     <div class='flex flex-row items-center justify-center gap-2'>
       <h1 class='text-4xl font-bold md:text-5xl'>
         {project.data.title}
@@ -42,8 +40,7 @@ const imgLink = `${Astro.site.origin}/og/${project.slug}.png`;
             target='_blank'
             href={project.data.links?.github}
             class='ml-auto rounded-full bg-accent p-1 text-background focus:outline-none focus-visible:outline-2 
-            focus-visible:outline-offset-4 focus-visible:outline-accent active:scale-90 sm:p-1.5'
-          >
+            focus-visible:outline-offset-4 focus-visible:outline-accent active:scale-90 sm:p-1.5'>
             <Icon name='simple-icons:github' size={26} />
           </a>
         )
@@ -56,8 +53,7 @@ const imgLink = `${Astro.site.origin}/og/${project.slug}.png`;
             href={project.data.links?.live}
             class={`${
               project.data.links.github ? '' : 'ml-auto'
-            } rounded-full bg-primary p-1 text-black focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4  focus-visible:outline-primary active:scale-90 sm:p-1.5`}
-          >
+            } rounded-full bg-primary p-1 text-black focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4  focus-visible:outline-primary active:scale-90 sm:p-1.5`}>
             <Icon name='mdi:launch' size={26} />
           </a>
         )
@@ -73,8 +69,7 @@ const imgLink = `${Astro.site.origin}/og/${project.slug}.png`;
       }
     </div>
     <section
-      class='prose prose-invert max-w-4xl md:prose-xl marker:text-accent prose-a:text-primary sm:prose-img:mx-auto sm:prose-img:w-[75%] sm:prose-img:transition-all sm:prose-img:duration-1000 hover:sm:prose-img:w-full'
-    >
+      class='prose prose-invert max-w-4xl md:prose-xl marker:text-accent prose-a:text-primary sm:prose-img:mx-auto sm:prose-img:w-[75%] sm:prose-img:transition-all sm:prose-img:duration-1000 hover:sm:prose-img:w-full'>
       <Content />
     </section>
   </div>
