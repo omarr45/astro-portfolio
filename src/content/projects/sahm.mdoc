@@ -1,0 +1,52 @@
+---
+  title: Sahm — سهم
+  featured: true
+  draft: false
+  description: An Arabic podcast platform for Islamic sciences and Arabic language, featuring multiple shows, episode browsing, guest profiles, and a Sanity-powered CMS.
+  image: '../../../public/images/projects/sahm/sahm-home.png'
+  technologies: [
+      'Astro',
+      'ReactJS',
+      'TypeScript',
+      'TailwindCSS',
+      'Sanity CMS',
+    ]
+  links: {
+    live: 'https://sahm101.com/',
+  }
+---
+
+{% imageSlider imgs=[
+    "/images/projects/sahm/sahm-home.png",
+    "/images/projects/sahm/sahm-shows.png",
+    "/images/projects/sahm/sahm-episodes.png",
+    "/images/projects/sahm/sahm-single-ep.png",
+    "/images/projects/sahm/sahm-guest.png",
+] /%}
+
+## Overview
+
+Sahm (سهم) is an independent Arabic media platform built to bring Islamic sciences and the Arabic language closer to general audiences, through long-form episodes led by specialists. Its name comes from the Arabic proverb "أن تضرب في كل فنٍ بسهم" — to take a shot at every art.
+
+The platform hosts multiple shows, all managed through a custom Sanity CMS studio and served via a fully RTL Arabic interface.
+
+## Features
+
+- **Multiple Shows**: Episodes are organized under distinct shows, each with its own branding color and dedicated page.
+- **Episode Browser**: A searchable, filterable archive of all episodes with pagination, tag filtering, and show filtering.
+- **Guest Profiles**: Each guest has a dedicated page listing all their episodes, bio, and social links.
+- **Sanity CMS**: Full content management for shows, episodes, guests, and tags through Sanity Studio with GROQ queries.
+- **OG Image Generation**: Dynamic Open Graph images generated at build/request time using Satori and Canvas, with full RTL and Arabic font support.
+- **RTL & Arabic UI**: The entire interface is right-to-left with Arabic typography using IBM Plex Sans Arabic.
+- **Statistics**: Homepage surfaces live counts of total episodes, guests, and shows fetched from Sanity.
+- **Related Episodes**: Each episode page surfaces related episodes from the same show.
+
+## Details
+
+The project is built with **Astro** for the core framework, using server-side rendering deployed on **Cloudflare Pages**. Interactive components (the episode browser with search and filters) are built as **React** islands.
+
+Content is managed entirely through **Sanity CMS**, with typed GROQ queries generated via Sanity's typegen. The data model covers shows, episodes (with YouTube embeds, duration, tags, and attachments), guests, and tags.
+
+One of the more involved parts was the OG image pipeline — generating Arabic, RTL images server-side required custom font loading, Satori for layout, and a Canvas-based fallback renderer to handle text wrapping correctly in Arabic.
+
+Styling uses **Tailwind CSS v4** with CSS logical properties throughout to correctly support the RTL layout at every breakpoint.

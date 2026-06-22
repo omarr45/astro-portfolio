@@ -1,0 +1,52 @@
+---
+  title: Summer Quran System
+  featured: false
+  draft: false
+  description: A full-stack course management system for a summer Quran program, covering registration, attendance, payment tracking, and end-of-course reviews for ~400 children and ~20 Sheikhs.
+  image: '../../../public/images/projects/quran-system/quran-children.png'
+  technologies: [
+      'ReactJS',
+      'TypeScript',
+      'Supabase',
+      'TailwindCSS',
+      'shadcn/ui',
+    ]
+  links: {
+    github: 'https://github.com/omarr45/quran-system',
+  }
+---
+
+{% imageSlider imgs=[
+    "/images/projects/quran-system/quran-register.png",
+    "/images/projects/quran-system/quran-login.png",
+    "/images/projects/quran-system/quran-children.png",
+    "/images/projects/quran-system/quran-dates.png",
+    "/images/projects/quran-system/quran-assign.png",
+    "/images/projects/quran-system/quran-halaqah.png",
+] /%}
+
+## Overview
+
+Summer Quran System is a full-stack course management web app built to replace a manual Google Forms workflow for a local summer Quran program. It handles the complete lifecycle of the program — from student registration to attendance, payment collection, weekly Sheikh stipends, and end-of-session performance reviews.
+
+The system supports three roles: **Admin**, **Sheikh**, and **Child**, each with their own dedicated interface and login method.
+
+## Features
+
+- **Registration**: Children self-register using a public form and receive a unique short code (e.g. `ABC123`) used as their login credential.
+- **Halaqahs**: Children are grouped into halaqahs (circles), each taught by one Sheikh. Reassignments are tracked with a full history.
+- **Attendance**: Sheikhs mark attendance per session — present, absent, or excused — directly from their dashboard.
+- **Reviews**: Sheikhs can rate each child's performance per session (excellent / good / poor) with an optional comment.
+- **Payments**: A matrix view lets admins track monthly tuition payments per child, with one-click toggle between paid and unpaid.
+- **Sheikh Stipends**: A weekly stipend matrix tracks compensation per Sheikh across the course duration.
+- **Admin Dashboard**: Full control over children, Sheikhs, halaqahs, sessions, and all financial records.
+- **RTL & Arabic UI**: The entire interface is in Arabic with right-to-left layout.
+- **Cairo Timezone**: All datetime handling is pinned to Africa/Cairo (UTC+2/+3 DST-aware).
+
+## Details
+
+The project was built to solve a real administrative pain point — managing ~400 children and ~20 Sheikhs across multiple Quran circles using only Google Forms and spreadsheets was error-prone and time-consuming.
+
+The backend is powered by **Supabase** (Postgres), with row-level security deferred until the auth architecture is finalised. Children and Sheikhs authenticate with their short codes stored in localStorage; admins use Supabase email/password auth.
+
+The frontend is built with **React 19**, **TypeScript**, and **Tailwind CSS 4**, using **shadcn/ui** components. All CSS uses logical properties throughout to support the RTL layout correctly.

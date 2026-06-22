@@ -42,6 +42,10 @@ const projects = defineCollection({
           "Design System",
           "Extension",
           "VS Code",
+          "Supabase",
+          "shadcn/ui",
+          "Astro",
+          "Sanity CMS",
         ]),
       ),
       links: z.object({
