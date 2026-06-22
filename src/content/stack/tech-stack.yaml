@@ -1,17 +1,29 @@
 - title: React
   icon: logos:react
-- title: React Router
-  icon: logos:react-router
-- title: Tailwind css
-  icon: logos:tailwindcss-icon
-- title: Sass
-  icon: logos:sass
+- title: Angular
+  icon: logos:angular-icon
+- title: Astro
+  icon: logos:astro-icon
 - title: TypeScript
   icon: logos:typescript-icon
+- title: Sass
+  icon: logos:sass
+- title: Tailwind css
+  icon: logos:tailwindcss-icon
+- title: Shadcn/ui
+  icon: vscode-icons:file-type-light-shadcn
+- title: React Router
+  icon: logos:react-router
+- title: Tanstack
+  icon: simple-icons:tanstack
+- title: Sanity IO
+  icon: devicon:sanity
 - title: Firebase
-  icon: logos:firebase
-- title: Astro
-  icon: simple-icons:astro
+  icon: logos:firebase-icon
+- title: Supabase
+  icon: logos:supabase-icon
+- title: Claude Code
+  icon: logos:claude-icon
 - title: GitHub
   icon: simple-icons:github
 - title: VS Code
