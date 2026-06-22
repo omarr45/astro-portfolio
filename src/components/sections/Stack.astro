@@ -24,7 +24,7 @@ const { data: stack } = await getEntry('stack', 'tech-stack');
 </section>
 
 <style>
-  @media (prefers-color-scheme: dark) {
+  html[data-theme='dark'] {
     .invert-on-dark {
       filter: invert(1);
     }
